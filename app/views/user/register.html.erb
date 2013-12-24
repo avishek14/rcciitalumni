@@ -1,0 +1,39 @@
+<%= form_tag user_create_path do %>
+	<%= label_tag :typeof, "Type of Account:" %>
+	<%= select_tag :typeof, "<option selected='selected'>Alumni</option><option>Teacher</option><option>Student</option>".html_safe %>
+	<br/>
+	<%= label_tag :fname, "First Name:" %>
+	<%= text_field_tag :fname %>
+	<br/>
+	<%= label_tag :lname, "Last Name:" %>
+	<%= text_field_tag :lname %>
+	<br/>
+	<%= label_tag :dob, "Date of Birth:" %>
+	<%= date_select :dob, :d, start_year: 1940 %>
+	<br/>
+	<%= label_tag :department, "Department:" %>
+	<%= text_field_tag :department %>
+	<br/>
+	<%= label_tag :yearofpassing, "Year of Passing:" %>
+	<%= select_year Date.today, start_year: 1940 %>
+	<br/>
+	<%= label_tag :status, "Current Status:" %>
+	<%= text_field_tag :status %>
+	<br/>
+	<%= label_tag :inst, "Institution or Organization:" %>
+	<%= text_field_tag :inst %>
+	<br/>
+	<%= label_tag :email, "Email:" %>
+	<%= email_field_tag :email %>
+	<br/>
+	<%= label_tag :phone, "Phone No.:" %>
+	<%= phone_field_tag :phone %>
+	<br/>
+	<%= label_tag :password, "Password:" %>
+	<%= password_field_tag :password %>
+	<br/>
+	<%= label_tag :conf_password, "Confirm Password:" %>
+	<%= password_field_tag :confirm_password %>
+	<br/>
+	<%= submit_tag "Register" %>
+<% end %>

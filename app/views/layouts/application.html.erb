@@ -9,8 +9,19 @@
 <body>
 
 <header>
-	<%= image_tag 'logo.png', alt: "logo" %>
+	<%= image_tag 'logo.png', alt: "logo", class: 'header-image' %>
+	<h1 class = 'header-text'>RCCIIT Alumni Association</h1>
 </header>
+
+<div class = 'logbar'>
+	<% if current_user %>
+		<p><%= current_user.fname %> <%= current_user.lname %></p>
+		<p><%= link_to 'Logout', user_logout_path %></p>
+	<% else %>
+		<p><%= link_to 'Login', user_logger_path %></p>
+		<p><%= link_to 'Register', user_register_path %></p>
+	<% end %>
+</div>
 
 <%= yield %>
 

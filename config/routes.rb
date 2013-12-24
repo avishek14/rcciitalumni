@@ -1,4 +1,13 @@
 RCCIITAlumni::Application.routes.draw do
+  get "user/logger"
+  post "user/login"
+  get "user/logout"
+  get "user/register"
+  post "user/create"
+  get "user/page"
+  get "user/edit"
+  get "user/delete"
+
   root "site#home"
   get "site/contact"
   get "site/pdesk"
