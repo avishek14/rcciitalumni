@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: rcciita_d
+  pool: 5
+  username: kaylors
+  password: dragonx
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: rcciita_t
+  pool: 5
+  username: kaylors
+  password: dragonx
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: rcciita_p
+  pool: 5
+  username: kaylors
+  password: dragonx
