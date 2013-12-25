@@ -1,5 +1,12 @@
-<%= form_tag admin_upload_image, multipart: true do %>
+<%= form_tag admin_upload_image_path, multipart: true do %>
 	<%= label_tag :gallery_image, "Image:" %>
 	<%= file_field_tag :gallery_image %>
 	<br/>
-	<%= 
+	<%= label_tag :caption, "Caption:" %>
+	<%= text_field_tag :caption %>
+	<br/>
+	<%= label_tag :desc, "Descirption:" %><br/>
+	<%= text_area_tag :desc, nil, size: "65x23" %>
+	<br/>
+	<%= submit_tag "Upload", id: :upload %>
+<% end %>

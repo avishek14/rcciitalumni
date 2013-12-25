@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
   def home
+  	@events = Event.all
   end
 
   def contact

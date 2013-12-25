@@ -13,6 +13,13 @@ class AdminController < ApplicationController
   end
 
   def upload_image
+    GalleryImages.create gallery_image: params[:gallery_image], caption: params[:caption], desc: params[:desc]
+    return redirect_to gallery_gallery_path
+  end
+
+  def delete_image
+    GalleryImages.find(params[:id]).delete
+    return redirect_to gallery_gallery_path
   end
 
   def event_create

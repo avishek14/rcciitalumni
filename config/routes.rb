@@ -1,6 +1,7 @@
 RCCIITAlumni::Application.routes.draw do
   get "gallery/gallery"
   get "gallery/one_image"
+
   get "event/event_all"
   get "event/event_one"
   get "admin/user_all"
@@ -8,6 +9,7 @@ RCCIITAlumni::Application.routes.draw do
   get "admin/user_delete"
   get "admin/gallery_upload"
   post "admin/upload_image"
+  get "admin/delete_image"
   get "admin/event_create"
   post "admin/create_event"
   get "admin/delete_event"

@@ -1,2 +1,23 @@
-<h1>Site#home</h1>
-<p>Find me in app/views/site/home.html.erb</p>
+<%= javascript_include_tag :jquery_cycle_lite %>
+<%= javascript_include_tag :home %>
+<%= javascript_include_tag :jquery_simplyscroll_min %>
+
+<div id = 'slideshowContainer'>
+	<div class = 'slideshow'>
+		<% GalleryImages.all.each do |gi| %>
+			<%= image_tag gi.gallery_image, size: "300x200" %>
+		<% end %>
+	</div>
+</div>
+
+<div class = 'event-list'>
+	<ul id = 'scrollable'>
+		<% @events.each do |e| %>
+			<%= link_to event_event_one_path id: e.id do %><li>
+				<span><%= e.title %></span>
+				<span><%= e.date_on.strftime "...%d/%m/%Y" %></span>
+			<% end %></li>
+		<% end %>
+	</ul>
+</div>
+
