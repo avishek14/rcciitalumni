@@ -1,0 +1,11 @@
+<h2>Open Forum</h2>
+<%= link_to "New Post", forum_new_post_path %>
+<div class = 'topics-list-container'>
+	<ul>
+		<% @topics.each do |t| %>
+			<%= link_to forum_topic_path id: t.id do %>
+				<li><%= t.title %></li>
+			<% end %>
+		<% end %>
+	</ul>
+</div>

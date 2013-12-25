@@ -1,9 +1,18 @@
 RCCIITAlumni::Application.routes.draw do
+  get "forum/main"
+  get "forum/topic"
+  get "forum/post"
+  get "forum/new_post"
+  post "forum/create_post"
+  get "forum/new_reply"
+  post "forum/create_reply"
+
   get "gallery/gallery"
   get "gallery/one_image"
 
   get "event/event_all"
   get "event/event_one"
+
   get "admin/user_all"
   get "admin/user_one"
   get "admin/user_delete"
@@ -27,6 +36,7 @@ RCCIITAlumni::Application.routes.draw do
   get "site/contact"
   get "site/pdesk"
   get "site/feedback"
+  post "site/send_feedback"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

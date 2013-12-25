@@ -16,7 +16,20 @@ body{
 	background-color: #F2F2F2;
 }
 
-.header-text{
-	display: inline-block;
-	font-size: 65px;
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.universal-wrapper{
+	padding: 5px;
+}
+
+header{
+	text-align: center;
+}
+
+.error-message{
+	font-weight: bold;
+	color: #DA241B;
 }

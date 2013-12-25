@@ -1,2 +1,16 @@
-<h1>Site#feedback</h1>
-<p>Find me in app/views/site/feedback.html.erb</p>
+<h2>Feedback Form</h2>
+<%= form_tag site_send_feedback_path do %>
+	<%= label_tag :name, "Name:" %>
+	<%= text_field_tag :name %>
+	<br/>
+	<%= label_tag :email, "Email:" %>
+	<%= email_field_tag :email %>
+	<br/>
+	<%= label_tag :subject, "Subject:" %>
+	<%= text_field_tag :subject %>
+	<br/>
+	<%= label_tag :body %><br/>
+	<%= text_area_tag :body, nil, size: "45x17" %>
+	<br/>
+	<%= submit_tag "Send Feedback", id: 'send_feedback' %>
+<% end %>

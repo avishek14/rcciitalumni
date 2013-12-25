@@ -2,6 +2,10 @@
 <%= javascript_include_tag :home %>
 <%= javascript_include_tag :jquery_simplyscroll_min %>
 
+<div class = 'error-message'>
+	<%= flash[:error] if flash[:error] %>
+</div>
+
 <div id = 'slideshowContainer'>
 	<div class = 'slideshow'>
 		<% GalleryImages.all.each do |gi| %>

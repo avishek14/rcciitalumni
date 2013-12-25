@@ -7,9 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class = 'universal-wrapper'>
 <header><%= link_to root_path do %>
 	<%= image_tag 'logo.png', alt: "logo", class: 'header-image' %>
-	<h1 class = 'header-text'>RCCIIT Alumni Association</h1>
+	<%= image_tag 'logo-text.png', alt: "logo text", class: 'header-text' %>
 <% end %></header>
 
 <div class = 'logbar'>
@@ -24,6 +25,14 @@
 	</ul>
 </div>
 
+<nav>
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "Principal's Desk", site_pdesk_path %></li>
+		<li><%= link_to "Gallery", gallery_gallery_path %></li>
+		<li><%= link_to "Open Forum", forum_main_path %></li>
+		<li><%= link_to "Feedback", site_feedback_path %></li>
+	</ul>
 <% if is_admin? %>
 <div class = 'admin-bar'>
 	<ul>
@@ -36,5 +45,6 @@
 
 <%= yield %>
 
+</div>
 </body>
 </html>

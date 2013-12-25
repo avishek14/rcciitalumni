@@ -1,0 +1,7 @@
+<%= form_tag forum_create_post_path do %>
+	<%= text_field_tag :title %>
+	<br/>
+	<%= text_area_tag :content, nil, size: "65x17" %>
+	<br/>
+	<%= submit_tag "Create Post", id: 'create_post' %>
+<% end %>

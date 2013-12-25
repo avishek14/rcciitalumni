@@ -1,0 +1,13 @@
+<h3><%= @topic.title %></h3>
+<%= link_to "Reply", forum_new_reply_path(id: @topic.id) %>
+<ul>
+	<% @posts.each do |p| %>
+		<li>
+			<div>
+				<h4><%= p.title %></h4>
+				<h6><%= p.user.fname %></h6>
+				<p><%= p.content %></p>
+			</div>
+		</li>
+	<% end %>
+</ul>

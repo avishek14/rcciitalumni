@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 	attr_accessor :password
 
+	has_many :topics
+	has_many :posts
+
 	mount_uploader :image, UserImageUploaderUploader
 
 	before_create { generate_token :auth_token }
