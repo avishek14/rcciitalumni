@@ -1,2 +1,21 @@
-<h1>User#page</h1>
-<p>Find me in app/views/user/page.html.erb</p>
+<div class = 'user-details'>
+	<%= image_tag @cu.image_url.to_s %>
+	<p><%= @cu.fname %> <%= @cu.lname %></p>
+	<p><%= @cu.typeof %></p>
+	<p><%= @cu.email %> <%= @cu.phone %></p>
+	<p><%= @cu.dob.strftime( "%d/%m/%Y") %></p>
+	<p><%= @cu.yearofpassing if @cu.yearofpassing %></p>
+</div>
+
+<div class = 'department=specific'>
+	<p><%= @cu.department %></p>
+	<% if @cu.typeof === "Alumni" %>
+		<p><%= @cu.status if @cu.status %></p>
+		<p><%= @cu.inst if @cu.inst %></p>
+	<% end %>
+	<% if @cu.typeof === "Teacher" %>
+		<p><%= @cu.posit %></p>
+	<% end %>
+
+	<p><%= link_to "Delete", user_delete_path %></p>
+</div>

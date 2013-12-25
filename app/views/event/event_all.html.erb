@@ -1,0 +1,9 @@
+<ul>
+	<% @e_all.each do |e| %>
+		<%= link_to event_event_one_path id: e.id do %><li>
+			<h2><%= e.title %></h2>
+			<h6><%= e.date_on.strftime "%d/%m/%Y" %></h6>
+			<p><%= e.desc[0,200] + "...more" %></p>
+		</li><% end %>
+	<% end %>
+</ul>	

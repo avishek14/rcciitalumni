@@ -1,6 +1,18 @@
-<%= form_tag user_create_path do %>
+<%= javascript_include_tag :registration %>
+
+<div class = 'error-message'>
+	<% if flash[:error] %>
+			<%= flash[:error] %>
+	<% end %>
+</div>
+<div class = 'error-message' id = 'registration_error' style = 'display:none'></div>
+
+<%= form_tag user_create_path, multipart: true do %>
 	<%= label_tag :typeof, "Type of Account:" %>
 	<%= select_tag :typeof, "<option selected='selected'>Alumni</option><option>Teacher</option><option>Student</option>".html_safe %>
+	<br/>
+	<%= label_tag :image, "Image:" %>
+	<%= file_field_tag :image %>
 	<br/>
 	<%= label_tag :fname, "First Name:" %>
 	<%= text_field_tag :fname %>
@@ -9,7 +21,7 @@
 	<%= text_field_tag :lname %>
 	<br/>
 	<%= label_tag :dob, "Date of Birth:" %>
-	<%= date_select :dob, :d, start_year: 1940 %>
+	<%= date_select :dob, :d, start_year: 1940, end_year: Time.now.year-17 %>
 	<br/>
 	<%= label_tag :department, "Department:" %>
 	<%= text_field_tag :department %>
@@ -23,11 +35,14 @@
 	<%= label_tag :inst, "Institution or Organization:" %>
 	<%= text_field_tag :inst %>
 	<br/>
+	<%= label_tag :posit, "Position:" %>
+	<%= text_field_tag :posit, nil, disabled: :disabled %>
+	<br/>
 	<%= label_tag :email, "Email:" %>
 	<%= email_field_tag :email %>
 	<br/>
 	<%= label_tag :phone, "Phone No.:" %>
-	<%= phone_field_tag :phone %>
+	<%= text_field_tag :phone %>
 	<br/>
 	<%= label_tag :password, "Password:" %>
 	<%= password_field_tag :password %>
@@ -35,5 +50,5 @@
 	<%= label_tag :conf_password, "Confirm Password:" %>
 	<%= password_field_tag :confirm_password %>
 	<br/>
-	<%= submit_tag "Register" %>
+	<%= submit_tag "Register", id: 'register' %>
 <% end %>

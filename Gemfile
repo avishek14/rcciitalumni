@@ -9,7 +9,6 @@ gem 'unicorn' #For the Unicorn server
 gem 'unicorn-rails' #Unicorn was causing some trouble for me and including this solved my problems
 gem 'bcrypt-ruby', :require => "bcrypt" #For generating safe passwords
 gem 'carrierwave'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

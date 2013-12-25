@@ -1,0 +1,13 @@
+
+<%= form_tag admin_create_event_path do %>
+	<%= label_tag :date_on, "Event Date:" %>
+	<%= date_select :don, :d %>
+	<br/>
+	<%= label_tag :title, "Event Title:" %>
+	<%= text_field_tag :title %>
+	<br/>
+	<%= label_tag :desc, "Event Description:" %><br/>
+	<%= text_area_tag :desc, nil, size: "93x17" %>
+	<br/>
+	<%= submit_tag "Create", id: :create %>
+<% end %>

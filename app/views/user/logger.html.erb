@@ -1,2 +1,18 @@
-<h1>User#logger</h1>
-<p>Find me in app/views/user/logger.html.erb</p>
+<%= javascript_include_tag :logger %>
+
+<div class = 'error-message' id = 'logger_error' style = 'display:none'></div>
+<div class = 'error-message'>
+	<% if flash[:error] %>
+			<%= flash[:error] %>
+	<% end %>
+</div>
+
+<%= form_tag user_login_path do %>
+	<%= label_tag :email, "Email:" %>
+	<%= email_field_tag :email %>
+	<br/>
+	<%= label_tag :password, "Password:" %>
+	<%= password_field_tag :password %>
+	<br/>
+	<%= submit_tag "Login", id: 'login_button' %>
+<% end %>
