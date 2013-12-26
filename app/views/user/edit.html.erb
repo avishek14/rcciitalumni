@@ -1,0 +1,31 @@
+<div class = "edit-user-wrapper">
+	<div class = "error-message">
+		<%= flash[:error] if flash[:error] %>
+	</div>
+	<%= form_tag user_commit_edit_path, multipart: true do %>
+		<%= label_tag :image, "Image:" %><br/>
+		<%= file_field_tag :image %>
+		<br/><br/>
+		<% if current_user.typeof === 'Alumni' %>
+			<%= label_tag :status, "Current Status:" %><br/>
+			<%= text_field_tag :status, current_user.status %>
+			<br/><br/>
+			<%= label_tag :inst, "Institution or Organization:" %><br/>
+			<%= text_field_tag :inst, current_user.inst %>
+			<br/><br/>
+		<% end %>
+		<%= label_tag :email, "Email:" %><br/>
+		<%= email_field_tag :email, current_user.email %>
+		<br/><br/>
+		<%= label_tag :phone, "Phone No.:" %><br/>
+		<%= text_field_tag :phone, current_user.phone %> <span class = 'form-field-info'>Ten digit phone number, no spaces or hyphen.</span>
+		<br/><br/>
+		<%= label_tag :password, "Password:" %><br/>
+		<%= password_field_tag :password %> <span class = 'form-field-info'>Minimum 6 characters, maximum 16, letters and numbers only.</span>
+		<br/><br/>
+		<%= label_tag :conf_password, "Confirm Password:" %><br/>
+		<%= password_field_tag :confirm_password %>
+		<br/><br/>
+		<%= submit_tag "Update", id: 'update', class: 'button' %>
+	<% end %>
+</div>

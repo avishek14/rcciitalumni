@@ -1,0 +1,12 @@
+<div class = 'check-pm-wrapper'>
+	<h2><%= "#{current_user.fname}'s Messages" %></h2>
+
+	<div class = 'pm-messages'>
+		<ul>
+		<% @pms.each do |pm| %>
+			<li><span class= "pm-subject"><%= pm.subject %></span><br/>
+				<%= "#{User.find(pm.from).fname} #{User.find(pm.from).lname}" %>
+			</li>
+		<% end %>	
+	</div>
+</div>

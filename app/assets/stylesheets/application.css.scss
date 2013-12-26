@@ -15,10 +15,12 @@
 body{
 	background-color: #F2F2F2;
 	background-image: url('ricepaper.png');
+	font-family: 'Cardo', serif;
+	color: darken(#B7A65E, 40%);
 }
 
 .yield-wrapper{
-	
+
 }
 
 a{
@@ -58,6 +60,11 @@ header{
 	color: #DA241B;
 }
 
+.confirm-message{
+	font-weight: bold;
+	color: #007700;
+}
+
 .logbar{
 	li{
 		display: inline-block;
@@ -68,7 +75,7 @@ header{
 		border-right: 1px solid #776725;
 		font-family: 'Exo 2', sans-serif;
 		a:hover{
-			font-size: 110%;
+			font-weight: bold;
 		}
 	}
 	
@@ -76,7 +83,7 @@ header{
 
 nav{
 	margin: auto;
-	margin-top: -17px;
+	margin-bottom: 10px;
 	text-align: center;
 	width: 900px;
 	height: 21px;
@@ -87,12 +94,15 @@ nav{
 		list-style: none;
 		font-family: 'Exo 2', sans-serif;
 		background-color: darken(#EEEAD9, 25%);
+
+		&:hover{
+			background-color: darken(#EEEAD9, 35%);
+		}
 	}
 }
 
 .admin-bar{
 	margin: auto;
-	margin-top: -7px;
 	text-align: center;
 	li{	
 		width: 150px;
@@ -101,5 +111,12 @@ nav{
 		list-style: none;
 		font-family: 'Exo 2', sans-serif;	
 		background-color: darken(#EEEAD9, 17%);
+		&:hover{
+			background-color: darken(#EEEAD9, 27%);
+		}
 	}
+}
+
+.spacer{
+	height: 50px;
 }

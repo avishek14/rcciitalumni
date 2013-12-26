@@ -63,7 +63,59 @@ class UserController < ApplicationController
     @cu = User.find params[:id]
   end
 
+  def check_pm
+    unless current_user
+      return redirect_to root_path
+    end
+
+    @pms = Pm.where to: current_user.id
+  end
+
+  def pm
+    unless current_user
+      return redirect_to root_path
+    end
+
+    @cu = User.find params[:id]
+  end
+
+  def send_pm
+    unless current_user
+      return redirect_to root_path
+    end
+
+    user = User.find params[:receiver]
+
+    if user
+      Pm.create subject: params[:subject], body: params[:body], to: user.id, from: current_user.id
+    end
+
+    flash[:message] = "PM Sent."
+    return redirect_to user_page_path(id: params[:receiver])
+  end
+
   def edit
+  end
+
+  def commit_edit
+    unless params[:image] === ""
+      current_user.update_attribute :image, params[:image]
+    end
+
+    unless current_user.email === params[:email]
+      if User.find_by_email params[:email]
+        flash[:error] = "Email already exists."
+        return redirect_to user_edit_path
+      end
+    end
+
+    current_user.update_attributes email: params[:email], phone: params[:phone]
+
+    if current_user.typeof === "Alumni"
+      current_user.update_attributes status: params[:status], inst: params[:inst]
+    end
+
+    return redirect_to user_page_path(id: current_user.id)
   end
 
   def delete
@@ -72,6 +124,8 @@ class UserController < ApplicationController
     end
 
     cur = current_user
+    cur.remove_image!
+    cur.save
     cur.destroy
     cookies.delete :auth_token
     redirect_to root_path

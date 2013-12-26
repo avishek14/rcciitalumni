@@ -30,7 +30,11 @@ RCCIITAlumni::Application.routes.draw do
   get "user/register"
   post "user/create"
   get "user/page"
+  get "user/check_pm"
+  get "user/pm"
+  post "user/send_pm"
   get "user/edit"
+  post "user/commit_edit"
   get "user/delete"
 
   root "site#home"

@@ -11,44 +11,45 @@
 </head>
 <body>
 <div class = 'universal-wrapper'>
-<header><%= link_to root_path do %>
-			<%= image_tag 'logo.png', alt: "logo", class: 'header-image', width: '5%' %>
-			<%= image_tag 'logo-text.png', alt: "logo text", class: 'header-text' %>
-		<% end %>
-		<div class = 'logbar'>
-			<ul>
-				<% if current_user %>
-					<li><%= link_to "#{current_user.fname} #{current_user.lname}", user_page_path(id: current_user.id) %></li>
-					<li><%= link_to 'Logout', user_logout_path %></li>
-				<% else %>
-					<li><%= link_to 'Login', user_logger_path %></li>
-					<li><%= link_to 'Register', user_register_path %></li>
-				<% end %>
-			</ul>
-		</div>
+<header>
+	<%= link_to root_path do %>
+		<%= image_tag 'logo.png', alt: "logo", class: 'header-image', width: '5%' %>
+		<%= image_tag 'logo-text.png', alt: "logo text", class: 'header-text' %>
+	<% end %>
+	<div class = 'logbar'>
+		<ul>
+			<% if current_user %>
+				<li><%= link_to "#{current_user.fname} #{current_user.lname}", user_page_path(id: current_user.id) %></li>
+				<li><%= link_to 'Check P.M.', user_check_pm_path %></li>
+				<li><%= link_to 'Logout', user_logout_path %></li>
+			<% else %>
+				<li><%= link_to 'Login', user_logger_path %></li>
+				<li><%= link_to 'Register', user_register_path %></li>
+			<% end %>
+		</ul>
+	</div>
+	<nav>
+		<ul>
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "Principal's Desk", site_pdesk_path %></li>
+			<li><%= link_to "Gallery", gallery_gallery_path %></li>
+			<li><%= link_to "Open Forum", forum_main_path %></li>
+			<li><%= link_to "Feedback", site_feedback_path %></li>
+		</ul>
+	</nav>
+	<% if is_admin? %>
+	<div class = 'admin-bar'>
+		<ul>
+			<li><%= link_to 'Manage Users', admin_user_all_path %></li>
+			<li><%= link_to 'Upload to Gallery', admin_gallery_upload_path %></li>
+			<li><%= link_to 'Create Events', admin_event_create_path %></li>
+		</ul>
+	</div>
+	<% end %>
 </header>
 
-<nav>
-	<ul>
-		<li><%= link_to "Home", root_path %></li>
-		<li><%= link_to "Principal's Desk", site_pdesk_path %></li>
-		<li><%= link_to "Gallery", gallery_gallery_path %></li>
-		<li><%= link_to "Open Forum", forum_main_path %></li>
-		<li><%= link_to "Feedback", site_feedback_path %></li>
-	</ul>
-</nav>
-<% if is_admin? %>
-<div class = 'admin-bar'>
-	<ul>
-		<li><%= link_to 'Manage Users', admin_user_all_path %></li>
-		<li><%= link_to 'Upload to Gallery', admin_gallery_upload_path %></li>
-		<li><%= link_to 'Create Events', admin_event_create_path %></li>
-	</ul>
-</div>
-<% end %>
-
 <div class = 'yield-wrapper'>
-
+<div class = "spacer"></div>
 <%= yield %>
 
 </div>

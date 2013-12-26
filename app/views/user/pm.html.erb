@@ -1,0 +1,15 @@
+<div class = 'pm-wrapper'>
+	<%= form_tag user_send_pm_path do %>
+		<%= label_tag :to, "To:" %><br/>
+		<%= label_tag :to, "#{@cu.fname} #{@cu.lname}" %>
+		<br/><br/>
+		<%= label_tag :subject, "Subject:" %><br/>
+		<%= text_field_tag :subject %>
+		<br/><br/>
+		<%= label_tag :body, "Body:" %><br/>
+		<%= text_area_tag :body, nil, size: "65x17" %>
+		<br/><br/>
+		<%= hidden_field_tag :receiver, @cu.id %>
+		<%= submit_tag "Send", id: 'send', class: 'button' %>
+	<% end %>
+</div>

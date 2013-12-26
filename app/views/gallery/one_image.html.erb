@@ -5,5 +5,5 @@
 <p><%= @gal_one.desc %></p>
 
 <% if is_admin? %>
-	<%= link_to "Delete", admin_delete_image_path( id: @gal_one.id) %>
+	<%= link_to "Delete", admin_delete_image_path( id: @gal_one.id), class: 'button' %>
 <% end %>

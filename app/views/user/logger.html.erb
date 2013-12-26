@@ -8,11 +8,11 @@
 </div>
 
 <%= form_tag user_login_path do %>
-	<%= label_tag :email, "Email:" %>
+	<%= label_tag :email, "Email:" %><br/>
 	<%= email_field_tag :email %>
-	<br/>
-	<%= label_tag :password, "Password:" %>
+	<br/><br/>
+	<%= label_tag :password, "Password:" %><br/>
 	<%= password_field_tag :password %>
-	<br/>
-	<%= submit_tag "Login", id: 'login_button' %>
+	<br/><br/>
+	<%= submit_tag "Login", id: 'login_button', class: 'button' %>
 <% end %>

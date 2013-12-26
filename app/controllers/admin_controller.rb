@@ -18,7 +18,10 @@ class AdminController < ApplicationController
   end
 
   def delete_image
-    GalleryImages.find(params[:id]).delete
+    gali = GalleryImages.find(params[:id])
+    gali.remove_gallery_image!
+    gali.save
+    gali.delete
     return redirect_to gallery_gallery_path
   end
 

@@ -1,16 +1,16 @@
 <h2>Feedback Form</h2>
 <%= form_tag site_send_feedback_path do %>
-	<%= label_tag :name, "Name:" %>
+	<%= label_tag :name, "Name:" %><br/>
 	<%= text_field_tag :name %>
-	<br/>
-	<%= label_tag :email, "Email:" %>
+	<br/><br/>
+	<%= label_tag :email, "Email:" %><br/>
 	<%= email_field_tag :email %>
-	<br/>
-	<%= label_tag :subject, "Subject:" %>
+	<br/><br/>
+	<%= label_tag :subject, "Subject:" %><br/>
 	<%= text_field_tag :subject %>
-	<br/>
-	<%= label_tag :body %><br/>
+	<br/><br/>
+	<%= label_tag :body, "Body:" %><br/>
 	<%= text_area_tag :body, nil, size: "45x17" %>
-	<br/>
-	<%= submit_tag "Send Feedback", id: 'send_feedback' %>
+	<br/><br/>
+	<%= submit_tag "Send Feedback", id: 'send_feedback', class: 'button' %>
 <% end %>
