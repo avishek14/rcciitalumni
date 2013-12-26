@@ -6,6 +6,7 @@ RCCIITAlumni::Application.routes.draw do
   post "forum/create_post"
   get "forum/new_reply"
   post "forum/create_reply"
+  get "forum/delete_post"
 
   get "gallery/gallery"
   get "gallery/one_image"

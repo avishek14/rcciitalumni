@@ -7,6 +7,9 @@
 				<h4><%= p.title %></h4>
 				<h6><%= p.user.fname %></h6>
 				<p><%= p.content %></p>
+				<% if p.user.id === current_user.id %> 
+					<%= link_to "Delete", forum_delete_post_path(id: p.id) %>
+				<% end %>
 			</div>
 		</li>
 	<% end %>

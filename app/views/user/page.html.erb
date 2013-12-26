@@ -1,3 +1,4 @@
+<div class = 'user-page-wrapper'>
 <div class = 'user-details'>
 	<%= image_tag @cu.image_url.to_s %>
 	<p><%= @cu.fname %> <%= @cu.lname %></p>
@@ -17,5 +18,6 @@
 		<p><%= @cu.posit %></p>
 	<% end %>
 
-	<p><%= link_to "Delete", user_delete_path %></p>
+	<p><%=link_to "Edit", user_edit_path(id: @cu.id), class: 'button' %> <%= link_to "Delete", user_delete_path, class: 'button' %></p>
+</div>
 </div>

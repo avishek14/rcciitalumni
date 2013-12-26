@@ -41,14 +41,31 @@ $(function(){
 			messg = "Phone number cannot be empty.";
 			err =true;
 		}
+		else if( !$('#phone').val().match(/^(\d){10}$/) ) {
+			messg = "Phone number invalid."
+			err = true;
+		}
+		else if( $('#department').val() === "" ) {
+			messg = "Department cannot be empty.";
+			err = true;
+		}
+		else if( $('#image').val() === "" ) {
+			messg = "Image field cannot be empty.";
+			err = true;
+		}
 		else if( $('#email').val() === "" ) {
 			messg = "Email cannot be empty.";
 			err = true;
 		}
-		else if( $('#fname').val() === "" && $('#lname').val() === "" ) {
+		else if( $('#fname').val() === "" || $('#lname').val() === "" ) {
 			messg = "Enter full name.";
 			err = true;
 		}
+		else if( !$('#posit').is(':disabled') && $('#posit').val() === "" ) {
+			messg = "Position cannot be empty.";
+			err = true;
+		}
+		
 
 		if( err ) {
 			e.stopPropagation();

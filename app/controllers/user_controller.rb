@@ -60,7 +60,7 @@ class UserController < ApplicationController
       return redirect_to root_path
     end
 
-    @cu = current_user
+    @cu = User.find params[:id]
   end
 
   def edit

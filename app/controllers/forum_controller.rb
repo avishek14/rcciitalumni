@@ -14,7 +14,7 @@ class ForumController < ApplicationController
   	end
 
   	@topic = Topic.find params[:id]
-  	@posts = Post.where topic_id: params[:id]
+  	@posts = Post.where( topic_id: params[:id] ).order( 'updated_at ASC')
   end
 
   def post
@@ -51,8 +51,31 @@ class ForumController < ApplicationController
   	end
 
   	topic = Topic.create title: params[:title], user_id: current_user.id
-  	post = Post.create title: params[:title], content: params[:content], user_id: current_user.id, topic_id: topic.id
+  	post = Post.create title: params[:title], content: params[:content], user_id: current_user.id, 
+  		topic_id: topic.id, primary: true
 
   	redirect_to forum_topic_path( id: topic.id)
+  end
+
+  def delete_post
+  	unless current_user
+  		flash[:error] = "Only registered users may access the Open Forum."
+  		return redirect_to root_path
+  	end
+
+  	post = Post.find(params[:id])
+  	tid = post.topic.id
+
+  	if post.primary
+  		Topic.find(tid).destroy
+
+  		Post.where(topic_id: tid).each do |p|
+  			p.delete
+  		end
+  		return redirect_to forum_main_path
+  	else
+  		post.delete
+   	end
+  	return redirect_to forum_topic_path(id: tid)
   end
 end

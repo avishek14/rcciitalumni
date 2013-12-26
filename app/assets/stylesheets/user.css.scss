@@ -1,3 +1,30 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-field-info{
+	color: darken(#D8D8D8, 40%);
+	font-size: 70%;
+}
+
+.register-form-wrapper{
+	text-align: left;
+	margin-left: 30px;
+	line-height: 150%;
+
+	form{
+		label{
+		}
+	}
+}
+
+.mandatory-field{
+	font-size: 13px;
+	color: red;
+}
+
+.user-details{
+	img{
+		width: 300px;
+	}
+}
