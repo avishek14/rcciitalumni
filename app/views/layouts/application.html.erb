@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RCCIITAlumni</title>
+  <title><%= @title_field %> | RCCIITAlumni</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -21,6 +21,7 @@
 			<% if current_user %>
 				<li><%= link_to "#{current_user.fname} #{current_user.lname}", user_page_path(id: current_user.id) %></li>
 				<li><%= link_to 'Check P.M.', user_check_pm_path %></li>
+				<li><%= link_to 'Search', search_search_path %></li>
 				<li><%= link_to 'Logout', user_logout_path %></li>
 			<% else %>
 				<li><%= link_to 'Login', user_logger_path %></li>

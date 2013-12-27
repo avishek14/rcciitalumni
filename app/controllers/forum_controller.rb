@@ -4,6 +4,9 @@ class ForumController < ApplicationController
   		flash[:error] = "Only registered users may access the Open Forum."
   		return redirect_to root_path
   	end
+
+    set_title "Open Forum"
+
   	@topics = Topic.all
   end
 
@@ -15,6 +18,8 @@ class ForumController < ApplicationController
 
   	@topic = Topic.find params[:id]
   	@posts = Post.where( topic_id: params[:id] ).order( 'updated_at ASC')
+
+    set_title @topic.title
   end
 
   def post
@@ -22,6 +27,8 @@ class ForumController < ApplicationController
   		flash[:error] = "Only registered users may access the Open Forum."
   		return redirect_to root_path
   	end
+
+    set_title 'New Post'
   end
 
   def new_post
@@ -32,6 +39,12 @@ class ForumController < ApplicationController
   end
 
   def new_reply
+    unless current_user
+      flash[:error] = "Only registered users may access the Open Forum."
+      return redirect_to root_path
+    end
+
+    set_title 'Reply to Post'
   end
 
   def create_reply
@@ -65,6 +78,10 @@ class ForumController < ApplicationController
 
   	post = Post.find(params[:id])
   	tid = post.topic.id
+
+    unless post.user.id === current_user.id
+      return redirect_to forum_topic_path(id: tid)
+    end
 
   	if post.primary
   		Topic.find(tid).destroy

@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   def logger
+    set_title 'Login'
   end
 
   def login
@@ -23,6 +24,7 @@ class UserController < ApplicationController
   end
 
   def register
+    set_title 'Register'
   end
 
   def create
@@ -61,6 +63,8 @@ class UserController < ApplicationController
     end
 
     @cu = User.find params[:id]
+
+    set_title "#{@cu.fname} #{@cu.lname}"
   end
 
   def check_pm
@@ -68,7 +72,20 @@ class UserController < ApplicationController
       return redirect_to root_path
     end
 
-    @pms = Pm.where to: current_user.id
+    set_title 'P.M.'
+
+    @pms = Pm.where(to: current_user.id).order('created_at DESC')
+  end
+
+  def check_one_pm
+    unless current_user and Pm.find(params[:id]).to === current_user.id
+      return redirect_to root_path
+    end
+
+    @pm = Pm.find params[:id]
+
+    @pm.update_attribute :seen, true
+    set_title "#{@pm.subject}"
   end
 
   def pm
@@ -76,7 +93,11 @@ class UserController < ApplicationController
       return redirect_to root_path
     end
 
+    set_title 'Send P.M.'
+
     @cu = User.find params[:id]
+    @subject = ""
+    @subject = params[:subject] if params[:subject]
   end
 
   def send_pm
@@ -94,7 +115,24 @@ class UserController < ApplicationController
     return redirect_to user_page_path(id: params[:receiver])
   end
 
+  def delete_pm
+    unless current_user
+      return redirect_to root_path
+    end
+
+    @pm = Pm.find params[:id]
+
+    unless @pm.to === current_user.id
+      return redirect_to user_check_pm_path
+    end
+
+    @pm.delete
+
+    return redirect_to user_check_pm_path
+  end
+
   def edit
+    set_title 'Edit Account Details'
   end
 
   def commit_edit

@@ -1,11 +1,19 @@
+<div class = 'open-forum-wrapper'>
 <h2>Open Forum</h2>
-<%= link_to "New Post", forum_new_post_path %>
+<%= link_to "New Post", forum_new_post_path, class: 'button' %>
 <div class = 'topics-list-container'>
 	<ul>
 		<% @topics.each do |t| %>
 			<%= link_to forum_topic_path id: t.id do %>
-				<li><%= t.title %></li>
-			<% end %>
+				<li>
+					<h4><%= t.title %></h4><% end %>
+					<span class = 'owner'>
+						<%= link_to "started by #{t.user.fname} #{t.user.lname}", user_page_path(id: t.user.id) %><br/>
+						<%= "created on "+t.created_at.strftime("%d/%m/%Y  %I:%M %p") %><br/>
+						<%= "total posts "+Post.where(topic_id: t.id).count.to_s %>
+					</span>
+				</li>
 		<% end %>
 	</ul>
+</div>
 </div>

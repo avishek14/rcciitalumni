@@ -1,4 +1,6 @@
 $(function(){
+	var refd = false;
+
 	$('.slideshow').cycle({
 		fx: 'fade',
 		speed: 200,

@@ -1,9 +1,10 @@
+<div class = 'gallery-wrapper'>
 <% @gal_all.each do |gi| %>
-	<%= link_to gallery_one_image_path id: gi.id do %>
 	<div class = 'gallery-image'>
-		<%= image_tag gi.gallery_image.to_s %>
+		<%= link_to gallery_one_image_path id: gi.id do %>
+		<%= image_tag gi.gallery_image.to_s, size: "300x300" %>
 		<p><%= gi.caption %></p>
-		<p><%= gi.desc[0,70] %></p>
+		<% end %>
 	</div>
-	<% end %>
 <% end %>
+</div>

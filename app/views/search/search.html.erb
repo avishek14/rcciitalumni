@@ -1,0 +1,8 @@
+<div class = 'search-wrapper'>
+	<%= form_tag search_search_results_path do %>
+		<%= label_tag :search_terms, "Enter first name, last name, email or phone number:" %><br/>
+		<%= text_field_tag :search_terms %>
+		<br/><br/>
+		<%= submit_tag "Search", id: 'search-button', class: 'button' %>
+	<% end %>
+</div>

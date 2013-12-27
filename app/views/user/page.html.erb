@@ -13,19 +13,19 @@
 		<em><u><%= link_to @cu.email, "mailto:#{@cu.email}", class: 'user-email' %></u></em>
 	</div>
 
-	<p><span class = 'prop'>Contact No.</span> <br/><%= @cu.phone %></p>
-	<p><span class = 'prop'>D.O.B</span> <br/><%= @cu.dob.strftime( "%d/%m/%Y") %></p>
+	<p><span class = 'prop'>Contact No.</span> <br/><%= @cu.phone if @cu.phone %></p>
+	<p><span class = 'prop'>D.O.B</span> <br/><%= @cu.dob.strftime( "%d/%m/%Y") if @cu.dob %></p>
 	<p><span class = 'prop'>Class Of</span> <br/><%= @cu.yearofpassing if @cu.yearofpassing %></p>
 </div>
 
 <div class = 'department-specific'>
-	<p><span class = 'prop'>Department</span> <br/><%= @cu.department %></p>
+	<p><span class = 'prop'>Department</span> <br/><%= @cu.department if @cu.department %></p>
 	<% if @cu.typeof === "Alumni" %>
 		<% if @cu.status != "" %><p><span class = 'prop'>Current Status</span> <br/><%= @cu.status %></p><% end %>
 		<% if @cu.inst != "" %><p><span class = 'prop'>Institution or Organization</span> <br/><%= @cu.inst %></p><% end %>
 	<% end %>
 	<% if @cu.typeof === "Teacher" %>
-		<p><span class = 'prop'>Post</span> <br/><%= @cu.posit %></p>
+		<p><span class = 'prop'>Post</span> <br/><%= @cu.posit if @cu.posit %></p>
 	<% end %>
 </div>
 <% if current_user.id === @cu.id %>

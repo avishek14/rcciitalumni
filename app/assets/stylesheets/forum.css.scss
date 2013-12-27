@@ -1,3 +1,85 @@
-// Place all the styles related to the Forum controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.open-forum-wrapper{
+	h2{
+		padding: 5px;
+		background-color: #796C36;
+		color: #C7B981;
+	}
+
+	ul{
+		list-style: none;
+		padding: 10px;
+		background-color: #AE9B4E;
+		color: #322D17;
+	}
+
+	li{
+		padding-top: 3px;
+		border-bottom: 2px solid #796C36;
+		margin-bottom: 17px;
+		padding-left: 5px;
+		&:hover{
+			background-color: lighten(#AE9B4E, 10%);	
+		}
+
+		h4{
+			display: inline-block;
+		}
+
+		.owner{
+			float: right;
+			font-size: 80%;
+			&:hover{
+				color: darken(#C7B981, 20%);
+			}
+		}
+	}	
+}
+
+.topic-wrapper{
+	h2{
+		padding: 5px;
+		background-color: #796C36;
+		color: #C7B981;
+	}
+
+	ul{
+		list-style: none;
+		padding: 10px;
+		background-color: #AE9B4E;
+		color: #322D17;
+	}
+
+	li{
+		padding-top: 3px;
+		border-bottom: 2px solid #796C36;
+		margin-bottom: 17px;
+		padding-left: 5px;
+	}	
+}
+
+.user-info{
+	display: inline-block;
+	text-align: center;
+	width: 150px;
+	h4{
+		text-align: center;
+	}
+	p{
+		text-align: center;
+		margin-top: -7px;
+	}
+	img{
+		margin-top: -17px;
+		border: 5px solid #564D26; 
+	}
+
+	&:hover{
+		background-color: #BFAF70;
+	}
+}
+
+.post-info{
+	display: inline-block;
+	width: 900px;
+	margin-left: 10px;
+}

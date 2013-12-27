@@ -1,0 +1,32 @@
+.search-results-wrapper{
+	h2{
+		padding: 5px;
+		background-color: #796C36;
+		color: #C7B981;
+	}
+
+	ul{
+		list-style: none;
+		padding: 10px;
+		background-color: #AE9B4E;
+		color: #322D17;
+	}
+
+	li{
+		border-left: 2px dashed #796C36;
+		margin-bottom: 15px;
+		padding-left: 5px;
+		&:hover{
+			background-color: lighten(#AE9B4E, 10%);	
+		}
+	}
+
+	h3{
+		margin-top: 1px;
+	}
+
+	h4{
+		margin-top: -20px;
+		margin-bottom: -5px;
+	}
+}

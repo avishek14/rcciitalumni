@@ -1,4 +1,7 @@
 RCCIITAlumni::Application.routes.draw do
+  get "search/search"
+  post "search/search_results"
+
   get "forum/main"
   get "forum/topic"
   get "forum/post"
@@ -31,8 +34,10 @@ RCCIITAlumni::Application.routes.draw do
   post "user/create"
   get "user/page"
   get "user/check_pm"
+  get "user/check_one_pm"
   get "user/pm"
   post "user/send_pm"
+  get "user/delete_pm"
   get "user/edit"
   post "user/commit_edit"
   get "user/delete"

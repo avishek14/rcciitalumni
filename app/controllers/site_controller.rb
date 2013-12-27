@@ -1,15 +1,23 @@
 class SiteController < ApplicationController
   def home
   	@events = Event.all
+
+    set_title 'Welcome'
   end
 
   def contact
+
+    set_title 'Contact'
   end
 
   def pdesk
+
+    set_title "Principal's Desk"
   end
 
   def feedback
+
+    set_title 'Feedback Form'
   end
 
   def send_feedback

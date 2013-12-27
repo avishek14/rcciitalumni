@@ -1,0 +1,11 @@
+<div class = 'search-results-wrapper'>
+	<h2>Results for search terms: <em><%= params[:search_terms] %></em></h2>
+	<ul>
+		<% @users.each do |u| %>
+			<li><%= link_to user_page_path(id: u.id) do %>
+				<h3><%= "#{u.fname} #{u.lname}" %></h3>
+				<h4><%= u.typeof %></h4>
+			<% end %></li>
+		<% end %>
+	</ul>
+</div>

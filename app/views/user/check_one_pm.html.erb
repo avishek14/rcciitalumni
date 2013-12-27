@@ -1,0 +1,8 @@
+<div class = "one-pm-wrapper">
+	<h2><%= @pm.subject %></h2>
+	<h4><%= link_to "#{User.find(@pm.from).fname} #{User.find(@pm.from).lname}", user_page_path(id: @pm.from) %></h4>
+	<h6><%= @pm.created_at.strftime "%d/%m/%Y" %></h6>	
+	<p><%= @pm.body %></p>
+	<%= link_to 'Delete', user_delete_pm_path(id: @pm.id), class: 'button' %>
+	<%= link_to 'Reply', user_pm_path(id: @pm.from, subject: "Reply: #{@pm.subject}"), class: 'button' %>
+</div>
