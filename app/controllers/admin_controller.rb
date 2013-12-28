@@ -4,7 +4,9 @@ class AdminController < ApplicationController
       return redirect_to root_path
     end
 
-    @u_all = User.all
+    @u_all = User.all.order('fname').page(params[:page]).per(18)
+
+    set_title 'Admin | Users'
   end
 
   def user_one
@@ -19,6 +21,11 @@ class AdminController < ApplicationController
       return redirect_to root_path
     end
 
+    user = User.find params[:id]
+    user.remove_image!
+    user.destroy
+
+    return redirect_to admin_user_all_path
   end
 
   def gallery_upload

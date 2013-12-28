@@ -9,7 +9,7 @@
 <div id = 'slideshowContainer'>
 	<div class = 'slideshow'>
 		<% GalleryImages.all.each do |gi| %>
-			<%= image_tag gi.gallery_image, size: "300x200" %>
+			<%= image_tag gi.gallery_image.thumb.to_s %>
 		<% end %>
 	</div>
 </div>
@@ -19,7 +19,7 @@
 		<% @events.each do |e| %>
 			<%= link_to event_event_one_path id: e.id do %><li>
 				<span><%= e.title %></span>
-				<span><%= e.date_on.strftime "...%d/%m/%Y" %></span>
+				<span class = 'date'><%= e.date_on.strftime "...%d/%m/%Y" %></span>
 			<% end %></li>
 		<% end %>
 	</ul>

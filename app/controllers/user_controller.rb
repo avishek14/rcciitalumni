@@ -74,7 +74,7 @@ class UserController < ApplicationController
 
     set_title 'P.M.'
 
-    @pms = Pm.where(to: current_user.id).order('created_at DESC')
+    @pms = Pm.where(to: current_user.id).order('created_at DESC').page(params[:page]).per(10)
   end
 
   def check_one_pm

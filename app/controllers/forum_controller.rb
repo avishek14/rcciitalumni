@@ -7,7 +7,7 @@ class ForumController < ApplicationController
 
     set_title "Open Forum"
 
-  	@topics = Topic.all.order('updated_at DESC')
+  	@topics = Topic.all.order('updated_at DESC').page(params[:page]).per(10)
   end
 
   def topic
@@ -17,7 +17,7 @@ class ForumController < ApplicationController
   	end
 
   	@topic = Topic.find params[:id]
-  	@posts = Post.where( topic_id: params[:id] ).order( 'updated_at ASC')
+  	@posts = Post.where( topic_id: params[:id] ).order( 'updated_at ASC').page(params[:page]).per(10)
 
     set_title @topic.title
   end

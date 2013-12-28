@@ -1,5 +1,6 @@
 <div class = 'all-events-wrapper'>
 	<ul>
+		<%= paginate @e_all %>
 	<% @e_all.each do |e| %>
 		<%= link_to event_event_one_path id: e.id do %><li>
 			<h2><%= e.title %></h2>

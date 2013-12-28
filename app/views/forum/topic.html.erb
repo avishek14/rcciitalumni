@@ -3,16 +3,19 @@
 <h2><%= @topic.title %></h3>
 <%= link_to "Reply", forum_new_reply_path(id: @topic.id), class: 'button' %>
 <ul>
+	<%= paginate @posts %>
 	<% @posts.each do |p| %>
 		<li>
 			<div class = 'user-info'><%= link_to user_page_path(id: p.user.id) do %>
 				<h4><%= p.user.fname %></h4>
-				<%= image_tag p.user.image.to_s, size: "100x100" %>
+				<%= image_tag p.user.image.thumb.to_s, size: "100x100" %>
 				<p><%= p.user.typeof %></p>
 			<% end %></div>
 			<div class = 'post-info'>
 				<h4><%= p.title %></h4>
-				<p><%= p.content %></p>
+				<h6><%= p.created_at.strftime "%d/%m/%Y  %I:%M %p" %></h6>
+				<hr/>
+				<p><%= txtl p.content %></p>
 				<% if p.user.id === current_user.id %> 
 					<%= link_to "Delete", forum_delete_post_path(id: p.id), class: 'button' %>
 				<% end %>

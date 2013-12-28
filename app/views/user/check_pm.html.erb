@@ -3,6 +3,7 @@
 
 	<div class = 'pm-messages'>
 		<ul>
+		<%= paginate @pms %>
 		<%= "No Messages." if @pms.empty? %>
 		<% @pms.each do |pm| %>
 			<li><span class= "pm-subject"><%= link_to pm.subject, user_check_one_pm_path(id: pm.id) %></span>

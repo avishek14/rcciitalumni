@@ -1,5 +1,9 @@
 #slideshowContainer{
-	margin-left: 600px;
+	width: 300px;
+}
+
+.slideshow img{
+	border: 7px solid #564D26;
 }
 
 /* Container DIV - automatically generated */
@@ -8,12 +12,15 @@
 }
 
 /* Clip DIV - automatically generated */
-.simply-scroll-clip { 
+.simply-scroll-clip {
+	padding: 15px;
 	position: relative;
+	right: -20px;
 	overflow: hidden;
-	max-height: 100px;
-	max-width: 300px;
-	border: 1px dashed orange;
+	max-height: 270px;
+	max-width: 610px;
+	border: 7px solid #564D26;
+	background-color: #AE9B4E;
 }
 
 /* UL/OL/DIV - the element that simplyScroll is inited on
@@ -29,5 +36,18 @@ Class name automatically added to element */
 	padding: 0;
 	margin: 0;
 	list-style: none;
-	border-bottom: 1px dotted yellow;
+	border-bottom: 2px solid #BFAF70;
+	&:hover{
+		background-color: #BFAF70;
+	}
+}
+
+.event-list{
+	float: right;
+	width: 610px;
+	font-size: 150%;
+
+	.date{
+		float: right;
+	}
 }

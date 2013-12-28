@@ -1,3 +1,22 @@
-// Place all the styles related to the Admin controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.admin-user-all-wrapper{
+	li{
+		max-width: 150px;
+		display: inline-block;
+		padding: 5px;
+		list-style: none;
+		text-align: center;
+
+		&:hover{
+			background-color: #DED7B6;
+		}
+	}
+
+	img{
+		width: 150px;
+		border: 7px solid darken(#B7A65E, 30%);
+	}
+
+	h3{
+
+	}
+}

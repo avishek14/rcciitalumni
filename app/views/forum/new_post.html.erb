@@ -1,7 +1,8 @@
 <%= form_tag forum_create_post_path do %>
 	<%= text_field_tag :title %>
 	<br/>
-	<%= text_area_tag :content, nil, size: "65x17" %>
+	<%= textile_editor_tag :content, nil, size: "125x17" %>
 	<br/>
+	<%= textile_editor_initialize %>
 	<%= submit_tag "Create Post", id: 'create_post' %>
 <% end %>

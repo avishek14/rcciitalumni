@@ -1,0 +1,11 @@
+<div class = 'admin-user-all-wrapper'>
+	<%= paginate @u_all %>
+	<ul>
+	<% @u_all.each do |u| %>
+		<%= link_to user_page_path id: u.id do %><li>
+			<%= image_tag u.image.thumb.to_s %>
+			<h3><%= "#{u.fname} #{u.lname}" %></h3>
+		</li><% end %>
+	<% end %>
+	</ul>
+</div>

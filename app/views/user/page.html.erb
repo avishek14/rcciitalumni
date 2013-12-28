@@ -30,6 +30,8 @@
 </div>
 <% if current_user.id === @cu.id %>
 	<p><%=link_to "Edit", user_edit_path(id: @cu.id), class: 'button' %> <%= link_to "Delete", user_delete_path, class: 'button' %></p>
+<% elsif is_admin? %>
+	<p><%= link_to "P.M", user_pm_path(id: @cu.id), class: 'button' %> <%= link_to 'Delete', admin_user_delete_path(id: @cu.id), class: 'button' %></p>
 <% else %>
 	<p><%= link_to "P.M", user_pm_path(id: @cu.id), class: 'button' %></p>
 <% end %>

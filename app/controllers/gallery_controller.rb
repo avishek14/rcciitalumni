@@ -1,6 +1,6 @@
 class GalleryController < ApplicationController
   def gallery
-  	@gal_all = GalleryImages.all
+  	@gal_all = GalleryImages.all.page(params[:page]).per(9)
 
   	set_title 'Gallery'
   end

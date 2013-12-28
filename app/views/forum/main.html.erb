@@ -3,6 +3,7 @@
 <%= link_to "New Post", forum_new_post_path, class: 'button' %>
 <div class = 'topics-list-container'>
 	<ul>
+		<%= paginate @topics %>
 		<% @topics.each do |t| %>
 			<%= link_to forum_topic_path id: t.id do %>
 				<li>
