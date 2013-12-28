@@ -10,7 +10,8 @@
 	<%= text_field_tag :subject %>
 	<br/><br/>
 	<%= label_tag :body, "Body:" %><br/>
-	<%= text_area_tag :body, nil, size: "45x17" %>
+	<%= textile_editor_tag :body, nil, size: "125x17" %>
 	<br/><br/>
+	<%= textile_editor_initialize %>
 	<%= submit_tag "Send Feedback", id: 'send_feedback', class: 'button' %>
 <% end %>

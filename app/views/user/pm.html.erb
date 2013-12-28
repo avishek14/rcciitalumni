@@ -7,9 +7,10 @@
 		<%= text_field_tag :subject, @subject %>
 		<br/><br/>
 		<%= label_tag :body, "Body:" %><br/>
-		<%= text_area_tag :body, nil, size: "65x17" %>
+		<%= textile_editor_tag :body, nil, size: "125x17" %>
 		<br/><br/>
 		<%= hidden_field_tag :receiver, @cu.id %>
+		<%= textile_editor_initialize %>
 		<%= submit_tag "Send", id: 'send', class: 'button' %>
 		<%= link_to "Inbox", user_check_pm_path, class: 'button' %>
 	<% end %>

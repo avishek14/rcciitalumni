@@ -7,7 +7,8 @@
 	<%= text_field_tag :title %>
 	<br/>
 	<%= label_tag :desc, "Event Description:" %><br/>
-	<%= text_area_tag :desc, nil, size: "93x17" %>
+	<%= textile_editor_tag :desc, nil, size: "123x17" %>
 	<br/>
+	<%= textile_editor_initialize %> 
 	<%= submit_tag "Create", id: :create %>
 <% end %>

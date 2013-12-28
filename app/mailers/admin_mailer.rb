@@ -7,7 +7,7 @@ class AdminMailer < ActionMailer::Base
   #   en.admin_mailer.feedback.subject
   #
   def feedback name, email, subject, body
-    @body = body
+    @body = RedCloth.new(body).to_html.html_safe
     @name = name
     @email = email
     mail to: "rcciit.alumni.admn@gmail.com", subject: "[Feedback] #{subject}"

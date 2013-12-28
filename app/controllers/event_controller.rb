@@ -1,6 +1,6 @@
 class EventController < ApplicationController
   def event_all
-  	@e_all = Event.all
+  	@e_all = Event.all.order('created_at DESC')
 
   	set_title 'Events'
   end

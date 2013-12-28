@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :is_admin?, :set_title
+  helper_method :current_user, :is_admin?, :set_title, :txtl
 
   def current_user
 	@current_user ||= User.find_by_auth_token cookies[:auth_token] if cookies[:auth_token]
@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def set_title title
     @title_field = title
+  end
+
+  def txtl the_text
+    RedCloth.new(the_text).to_html.html_safe
   end
 end
