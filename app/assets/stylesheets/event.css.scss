@@ -1,3 +1,38 @@
-// Place all the styles related to the Event controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.all-events-wrapper{
+	h2{
+		padding: 5px;
+		background-color: #796C36;
+		color: #C7B981;
+	}
+
+	ul{
+		list-style: none;
+		padding: 10px;
+		background-color: #AE9B4E;
+		color: #322D17;
+	}
+
+	li{
+		padding-top: 3px;
+		border-bottom: 2px solid #796C36;
+		margin-bottom: 17px;
+		padding-left: 5px;
+
+		&:hover{
+			background-color: lighten(#AE9B4E, 10%);	
+		}
+	}	
+}
+
+.event-one-wrapper{
+	h2{
+		padding: 5px;
+		background-color: #796C36;
+		color: #C7B981;
+	}
+
+	p{
+		padding: 10px;
+		background-color: #AE9B4E;
+	}
+}

@@ -7,7 +7,7 @@ class ForumController < ApplicationController
 
     set_title "Open Forum"
 
-  	@topics = Topic.all
+  	@topics = Topic.all.order('updated_at DESC')
   end
 
   def topic
