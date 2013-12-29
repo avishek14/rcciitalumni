@@ -5,15 +5,14 @@
 		padding: 5px;
 		list-style: none;
 		text-align: center;
-
-		&:hover{
-			background-color: #DED7B6;
-		}
 	}
 
 	img{
 		width: 150px;
-		border: 7px solid darken(#B7A65E, 30%);
+		border: 3px solid #207791;
+		&:hover{
+			border-color: #FFFFFF;
+		}
 	}
 
 	h3{

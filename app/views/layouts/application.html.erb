@@ -13,7 +13,6 @@
 <div class = 'universal-wrapper'>
 <header>
 	<%= link_to root_path do %>
-		<%= image_tag 'logo.png', alt: "logo", class: 'header-image', width: '5%' %>
 		<%= image_tag 'logo-text.png', alt: "logo text", class: 'header-text' %>
 	<% end %>
 	<div class = 'logbar'>
@@ -33,7 +32,9 @@
 		<ul>
 			<li><%= link_to "Principal's Desk", site_pdesk_path %></li>
 			<li><%= link_to "Gallery", gallery_gallery_path %></li>
-			<li><%= link_to "Open Forum", forum_main_path %></li>
+			<% if current_user %>
+				<li><%= link_to "Open Forum", forum_main_path %></li>
+			<% end %>
 			<li><%= link_to "Events", event_event_all_path %></li>
 			<li><%= link_to "Feedback", site_feedback_path %></li>
 		</ul>
@@ -54,6 +55,10 @@
 <%= yield %>
 
 </div>
+
+<footer>
+	<h2>Contact Details:</h2>
+</footer>
 
 </div>
 </body>

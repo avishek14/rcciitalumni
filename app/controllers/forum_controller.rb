@@ -53,6 +53,11 @@ class ForumController < ApplicationController
   		return redirect_to root_path
   	end
 
+    if params[:title] === "" or params[:content] === ""
+      flash[:error] = "All fields must be filled in."
+      return redirect_to forum_new_reply_path
+    end
+
   	Post.create title: params[:title], user_id: current_user.id, topic_id: params[:topic_id], content: params[:content]
   	redirect_to forum_topic_path(id: params[:topic_id])
   end
@@ -62,6 +67,11 @@ class ForumController < ApplicationController
   		flash[:error] = "Only registered users may access the Open Forum."
   		return redirect_to root_path
   	end
+
+    if params[:title] === "" or params[:content] === ""
+      flash[:error] = "All fields must be filled in."
+      return redirect_to forum_new_post_path
+    end
 
   	topic = Topic.create title: params[:title], user_id: current_user.id
   	post = Post.create title: params[:title], content: params[:content], user_id: current_user.id, 

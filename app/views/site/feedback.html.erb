@@ -1,15 +1,24 @@
+<%= javascript_include_tag :feedback %>
+
+<div class = 'error-message'>
+	<% if flash[:error] %>
+			<%= flash[:error] %>
+	<% end %>
+	<span id = 'feedback_error' style = 'display:none'></span>
+</div>
+
 <h2>Feedback Form</h2>
 <%= form_tag site_send_feedback_path do %>
-	<%= label_tag :name, "Name:" %><br/>
+	<%= label_tag :name, "Name:" %> <span class = 'mandatory-field'>*</span><br/>
 	<%= text_field_tag :name %>
 	<br/><br/>
-	<%= label_tag :email, "Email:" %><br/>
+	<%= label_tag :email, "Email:" %> <span class = 'mandatory-field'>*</span><br/>
 	<%= email_field_tag :email %>
 	<br/><br/>
-	<%= label_tag :subject, "Subject:" %><br/>
+	<%= label_tag :subject, "Subject:" %> <span class = 'mandatory-field'>*</span><br/>
 	<%= text_field_tag :subject %>
 	<br/><br/>
-	<%= label_tag :body, "Body:" %><br/>
+	<%= label_tag :body, "Body:" %> <span class = 'mandatory-field'>*</span><br/>
 	<%= textile_editor_tag :body, nil, size: "125x17" %>
 	<br/><br/>
 	<%= textile_editor_initialize %>

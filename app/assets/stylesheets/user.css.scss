@@ -38,7 +38,7 @@ $userFS: 117%;
 .prop{
 	font-weight: bold;
 	font-size: 95%;
-	background-color: #B7A65E;
+	background-color: #115A70;
 	padding: 2px 4px 2px 4px;
 	display: block;
 	margin-bottom: -25px;
@@ -67,11 +67,11 @@ $userFS: 117%;
 	display: inline-block;
 	img{
 		width: 300px;
-		border: 13px solid darken(#B7A65E, 30%);
+		border: 13px solid #207791;
 	}
 	p{
 		text-align: center;
-		background-color: #B7A65E;
+		background-color: #115A70;
 	}
 }
 
@@ -82,15 +82,15 @@ $userFS: 117%;
 
 .check-pm-wrapper{
 	h2{
-		background-color: #796C36;
-		color: lighten(#796C36,30%);
+		background-color: #32C9C7;
+		color: #FFFFFF;
 		padding: 2px 4px 2px 4px;
 	}
 
 	ul{
 		padding: 15px;
 		list-style: none;
-		background-color: lighten(#796C36, 15%);
+		background-color: #1A5958;
 	}
 
 	li{

@@ -1,25 +1,27 @@
 .all-events-wrapper{
+	min-width: 1100px;
 	h2{
 		padding: 5px;
-		background-color: #796C36;
-		color: #C7B981;
+		background-color: #32C9C7;
+		color: #FFFFFF;
 	}
 
 	ul{
+		min-width: 1100px;
 		list-style: none;
 		padding: 10px;
-		background-color: #AE9B4E;
-		color: #322D17;
+		background-color: #1A5958;
+		color: #FFFFFF;
 	}
 
 	li{
 		padding-top: 3px;
-		border-bottom: 2px solid #796C36;
+		border-bottom: 2px solid #FFFFFF;
 		margin-bottom: 17px;
 		padding-left: 5px;
 
 		&:hover{
-			background-color: lighten(#AE9B4E, 10%);	
+			background-color: #26807F;	
 		}
 	}	
 }
@@ -27,12 +29,12 @@
 .event-one-wrapper{
 	h2{
 		padding: 5px;
-		background-color: #796C36;
-		color: #C7B981;
+		background-color: #32C9C7;
+		color: #FFFFFF;
 	}
 }
 
 .desc{
 		padding: 10px;
-		background-color: #AE9B4E;
+		background-color: #1A5958;
 	}

@@ -1,3 +1,9 @@
+<div class = 'error-message'>
+	<% if flash[:error] %>
+			<%= flash[:error] %>
+	<% end %>
+	<span id = 'registration_error' style = 'display:none'></span>
+</div>
 <%= form_tag admin_upload_image_path, multipart: true do %>
 	<%= label_tag :gallery_image, "Image:" %>
 	<%= file_field_tag :gallery_image %>

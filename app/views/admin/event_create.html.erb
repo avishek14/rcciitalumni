@@ -1,4 +1,9 @@
-
+<div class = 'error-message'>
+	<% if flash[:error] %>
+			<%= flash[:error] %>
+	<% end %>
+	<span id = 'registration_error' style = 'display:none'></span>
+</div>
 <%= form_tag admin_create_event_path do %>
 	<%= label_tag :date_on, "Event Date:" %>
 	<%= date_select :don, :d %>

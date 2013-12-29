@@ -1,3 +1,9 @@
+<div class = 'error-message'>
+	<% if flash[:error] %>
+			<%= flash[:error] %>
+	<% end %>
+	<span id = 'registration_error' style = 'display:none'></span>
+</div>
 <%= form_tag forum_create_reply_path do %>
 	<%= text_field_tag :title %>
 	<br/>

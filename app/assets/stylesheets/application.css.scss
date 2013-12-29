@@ -13,18 +13,19 @@
  */
 
 body{
-	background-color: #F2F2F2;
-	background-image: url('ricepaper.png');
+	background-color: #022B3B;
+	/*background-image: url('ricepaper.png');*/
 	font-family: 'Cardo', serif;
-	color: darken(#B7A65E, 40%);
+	color: #FFFFFF;
 }
 
 .yield-wrapper{
 
 }
 
-input[type=text], input[type=password], input[type=email]{
+input[type=text], input[type=password], input[type=email], textarea{
 	padding: 5px;
+	border-radius: 5px;
 }
 
 a{
@@ -41,19 +42,21 @@ a{
 .button{
 	padding: 3px 7px 1px 7px;
 	font-family: 'Expletus Sans', cursive;
-	background-color: darken(#C7B981, 20%);
+	background-color: #207791;
 	color: lighten(#C7B981, 20%);
+	border-radius: 5px;
 
 	&:hover{
-		background-color: darken(#C7B981, 30%);
+		background-color: darken(#207791, 30%);
 		color: lighten(#C7B981, 30%);
 	}
 }
 
 header{
+	border-radius: 5px;
 	width: 1100px;
 	text-align: center;
-	background-color: darken(#EEEAD9, 10%);
+	background-color: #115A70;
 	padding: 10px;
 	padding-top: 20px;
 	margin: auto;
@@ -75,8 +78,8 @@ header{
 		list-style: none;
 		text-align: center;
 		padding: 10px;
-		border-left: 1px solid #776725;
-		border-right: 1px solid #776725;
+		border-left: 1px solid #FFFFFF;
+		border-right: 1px solid #FFFFFF;
 		font-family: 'Exo 2', sans-serif;
 		a:hover{
 			font-weight: bold;
@@ -92,15 +95,16 @@ nav{
 	width: 900px;
 	height: 21px;
 	li{
+		border-radius: 5px;
 		width: 150px;
 		padding: 5px;
 		display: inline-block;
 		list-style: none;
 		font-family: 'Exo 2', sans-serif;
-		background-color: darken(#EEEAD9, 25%);
+		background-color: #083A52;
 
 		&:hover{
-			background-color: darken(#EEEAD9, 35%);
+			background-color: darken(#083A52, 35%);
 		}
 	}
 }
@@ -108,19 +112,26 @@ nav{
 .admin-bar{
 	margin: auto;
 	text-align: center;
-	li{	
+	li{
+		border-radius: 5px;
 		width: 150px;
 		padding: 5px;
 		display: inline-block;
 		list-style: none;
 		font-family: 'Exo 2', sans-serif;	
-		background-color: darken(#EEEAD9, 17%);
+		background-color: darken(#207791, 17%);
 		&:hover{
-			background-color: darken(#EEEAD9, 27%);
+			background-color: darken(#207791, 27%);
 		}
 	}
 }
 
 .spacer{
 	height: 13px;
+}
+
+footer{
+	margin-top: 40px;
+	padding: 13px;
+	border-top: 2px solid #207791;
 }

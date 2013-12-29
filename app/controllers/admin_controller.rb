@@ -41,6 +41,11 @@ class AdminController < ApplicationController
       return redirect_to root_path
     end
 
+    if params[:gallery_image] === "" or params[:caption] === "" or params[:desc]
+      flash[:error] = "All fields must be filled in."
+      return redirect_to admin_gallery_upload_path
+    end
+
     GalleryImages.create gallery_image: params[:gallery_image], caption: params[:caption], desc: params[:desc]
     return redirect_to gallery_gallery_path
   end
@@ -68,6 +73,11 @@ class AdminController < ApplicationController
   def create_event
     unless is_admin?
       return redirect_to root_path
+    end
+
+    if params[:title] === "" or params[:desc] === ""
+      flash[:error] = "All fields must be filled in."
+      return redirect_to admin_event_create_path
     end
 
     dtime = DateTime.new params[:don]['d(1i)'].to_i, params[:don]['d(2i)'].to_i, params[:don]['d(3i)'].to_i

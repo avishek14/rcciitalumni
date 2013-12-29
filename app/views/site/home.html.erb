@@ -2,26 +2,28 @@
 <%= javascript_include_tag :home %>
 <%= javascript_include_tag :jquery_simplyscroll_min %>
 
-<div class = 'error-message'>
-	<%= flash[:error] if flash[:error] %>
-</div>
-
-<div id = 'slideshowContainer'>
-	<div class = 'slideshow'>
-		<% GalleryImages.all.each do |gi| %>
-			<%= image_tag gi.gallery_image.thumb.to_s %>
-		<% end %>
+<div class = 'home-wrapper'>
+	<div class = 'error-message'>
+		<%= flash[:error] if flash[:error] %>
 	</div>
-</div>
 
-<div class = 'event-list'>
-	<ul id = 'scrollable'>
-		<% @events.each do |e| %>
-			<%= link_to event_event_one_path id: e.id do %><li>
-				<span><%= e.title %></span>
-				<span class = 'date'><%= e.date_on.strftime "...%d/%m/%Y" %></span>
-			<% end %></li>
-		<% end %>
-	</ul>
+	<div id = 'slideshowContainer'>
+		<div class = 'slideshow'>
+			<% GalleryImages.all.each do |gi| %>
+				<%= image_tag gi.gallery_image.thumb.to_s %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class = 'event-list'>
+		<ul id = 'scrollable'>
+			<% @events.each do |e| %>
+				<%= link_to event_event_one_path id: e.id do %><li>
+					<span><%= e.title %></span>
+					<span class = 'date'><%= e.date_on.strftime "...%d/%m/%Y" %></span>
+				<% end %></li>
+			<% end %>
+		</ul>
+	</div>
 </div>
 

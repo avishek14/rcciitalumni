@@ -1,9 +1,27 @@
+.home-wrapper{
+	width: 1120px;
+}
+
+.event-list{
+	width: 790px;
+	height: 300px;
+	font-size: 150%;
+	display: inline-block;
+
+	.date{
+		float: right;
+	}
+}
+
 #slideshowContainer{
 	width: 300px;
+	height: 300px;
+	display: inline-block;
+	margin-bottom: 13px;
 }
 
 .slideshow img{
-	border: 7px solid #564D26;
+	border: 7px solid #207791;
 }
 
 /* Container DIV - automatically generated */
@@ -18,8 +36,8 @@
 	right: -20px;
 	overflow: hidden;
 	max-height: 270px;
-	max-width: 610px;
-	border: 7px solid #564D26;
+	max-width: 780px;
+	border: 7px solid #207791;
 	background-color: #AE9B4E;
 }
 
@@ -39,15 +57,5 @@ Class name automatically added to element */
 	border-bottom: 2px solid #BFAF70;
 	&:hover{
 		background-color: #BFAF70;
-	}
-}
-
-.event-list{
-	float: right;
-	width: 610px;
-	font-size: 150%;
-
-	.date{
-		float: right;
 	}
 }
