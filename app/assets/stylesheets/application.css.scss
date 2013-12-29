@@ -23,6 +23,10 @@ body{
 
 }
 
+ul, li, h2{
+	border-radius: 5px;
+}
+
 input[type=text], input[type=password], input[type=email], textarea{
 	padding: 5px;
 	border-radius: 5px;

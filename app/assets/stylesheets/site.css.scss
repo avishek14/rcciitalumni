@@ -38,7 +38,7 @@
 	max-height: 270px;
 	max-width: 780px;
 	border: 7px solid #207791;
-	background-color: #AE9B4E;
+	background-color: #1A5958;
 }
 
 /* UL/OL/DIV - the element that simplyScroll is inited on
@@ -54,8 +54,8 @@ Class name automatically added to element */
 	padding: 0;
 	margin: 0;
 	list-style: none;
-	border-bottom: 2px solid #BFAF70;
+	border-bottom: 2px solid #FFFFFF;
 	&:hover{
-		background-color: #BFAF70;
+		background-color: #26807F;
 	}
 }
