@@ -63,6 +63,11 @@ class UserController < ApplicationController
       newUser.active = false
     end
 
+    unless newUser.valid?
+      flash[:error] = "Something has gone wrong. Check the format of your image."
+      return redirect_to user_register_path
+    end
+    
     newUser.save
 
     flash[:message] = "Account registered. Wait for activation by admin."
