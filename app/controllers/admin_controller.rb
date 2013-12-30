@@ -41,7 +41,7 @@ class AdminController < ApplicationController
       return redirect_to root_path
     end
 
-    if params[:gallery_image] === "" or params[:caption] === "" or params[:desc]
+    if params[:gallery_image] === "" or params[:caption] === "" or params[:desc] === ""
       flash[:error] = "All fields must be filled in."
       return redirect_to admin_gallery_upload_path
     end
