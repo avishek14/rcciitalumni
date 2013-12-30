@@ -16,6 +16,18 @@ class AdminController < ApplicationController
 
   end
 
+  def user_toggle
+    unless is_admin?
+      return redirect_to root_path
+    end
+
+    user = User.find params[:id]
+    user.update_attribute :active, !user.active
+
+    flash[:message] = "User state toggled. User active state is = #{user.active}"
+    return redirect_to user_page_path( id: user.id )
+  end
+
   def user_delete
     unless is_admin?
       return redirect_to root_path

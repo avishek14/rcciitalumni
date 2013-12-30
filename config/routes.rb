@@ -19,6 +19,7 @@ RCCIITAlumni::Application.routes.draw do
 
   get "admin/user_all"
   get "admin/user_one"
+  get "admin/user_toggle"
   get "admin/user_delete"
   get "admin/gallery_upload"
   post "admin/upload_image"

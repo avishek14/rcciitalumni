@@ -12,4 +12,13 @@ class AdminMailer < ActionMailer::Base
     @email = email
     mail to: "rcciit.alumni.admn@gmail.com", subject: "[Feedback] #{subject}"
   end
+
+  def new_user typeof, name, email, phone
+    @typeof = typeof
+    @name = name
+    @email = email
+    @phone = phone
+
+    mail to: "rcciit.alumni.admn@gmail.com", subject: "[New User] #{name}"
+  end
 end

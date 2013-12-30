@@ -12,9 +12,14 @@ class UserController < ApplicationController
     elsif !user.authenticate params[:password]
       flash[:error] = "Password incorrect."
       return redirect_to user_logger_path
+    elsif !user.active
+      flash[:error] = "User account not yet active. Wait twenty-four hours or contact admin."
+      return redirect_to user_logger_path
     end
 
     cookies[:auth_token] = user.auth_token
+
+    flash[:message] = "User #{user.fname} #{user.lname} successfully logged in."
     redirect_to root_path
   end
 
@@ -52,7 +57,17 @@ class UserController < ApplicationController
       newUser.yearofpassing = params[:date][:year]
     end
 
+    if params[:email] === 'admin@rcciita.com'
+      newUser.active = true
+    else
+      newUser.active = false
+    end
+
     newUser.save
+
+    flash[:message] = "Account registered. Wait for activation by admin."
+
+    AdminMailer.new_user(newUser.typeof, "#{newUser.fname} #{newUser.lname}", newUser.email, newUser.phone).deliver
 
     redirect_to root_path  
   end
