@@ -89,7 +89,7 @@ class ForumController < ApplicationController
   	post = Post.find(params[:id])
   	tid = post.topic.id
 
-    unless post.user.id === current_user.id
+    unless post.user.id === current_user.id or is_admin?
       return redirect_to forum_topic_path(id: tid)
     end
 
