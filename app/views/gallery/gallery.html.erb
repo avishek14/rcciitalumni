@@ -3,7 +3,7 @@
 <% @gal_all.each do |gi| %>
 	<div class = 'gallery-image'>
 		<%= link_to gallery_one_image_path id: gi.id do %>
-		<%= image_tag gi.gallery_image.thumb.to_s, size: "300x300" %>
+		<%= image_tag gi.gallery_image.to_s, size: "300x300" %>
 		<p><%= gi.caption %></p>
 		<% end %>
 	</div>

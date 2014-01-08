@@ -27,6 +27,9 @@ RCCIITAlumni::Application.routes.draw do
   get "admin/event_create"
   post "admin/create_event"
   get "admin/delete_event"
+  get "admin/check_feedback"
+  get "admin/one_feedback"
+  get "admin/delete_feedback"
 
   get "user/logger"
   post "user/login"

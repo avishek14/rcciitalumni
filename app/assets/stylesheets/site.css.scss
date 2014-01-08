@@ -2,26 +2,26 @@
 	width: 1120px;
 }
 
-.event-list{
-	width: 790px;
-	height: 300px;
-	font-size: 150%;
-	display: inline-block;
-
-	.date{
-		float: right;
-	}
-}
-
 #slideshowContainer{
-	width: 300px;
-	height: 300px;
+	width: 450px;
+	height: 450px;
 	display: inline-block;
 	margin-bottom: 13px;
 }
 
 .slideshow img{
 	border: 7px solid #207791;
+}
+
+.event-list{
+	width: 640px;
+	height: 800px;
+	font-size: 150%;
+	display: inline-block;
+
+	.date{
+		float: right;
+	}
 }
 
 /* Container DIV - automatically generated */
@@ -35,7 +35,7 @@
 	position: relative;
 	right: -20px;
 	overflow: hidden;
-	max-height: 270px;
+	max-height: 800px;
 	max-width: 780px;
 	border: 7px solid #207791;
 	background-color: #1A5958;
@@ -58,4 +58,15 @@ Class name automatically added to element */
 	&:hover{
 		background-color: #26807F;
 	}
+}
+
+.pht{
+	margin-bottom: 250px;
+	border: 7px solid #207791;
+}
+
+.pms{
+	text-align: justify;
+	display: inline-block;
+	max-width: 720px;
 }

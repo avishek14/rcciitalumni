@@ -72,8 +72,6 @@ class UserController < ApplicationController
 
     flash[:message] = "Account registered. Wait for activation by admin."
 
-    AdminMailer.new_user(newUser.typeof, "#{newUser.fname} #{newUser.lname}", newUser.email, newUser.phone).deliver
-
     redirect_to root_path  
   end
 
@@ -94,7 +92,7 @@ class UserController < ApplicationController
 
     set_title 'P.M.'
 
-    @pms = Pm.where(to: current_user.id).order('created_at DESC').page(params[:page]).per(10)
+    @pms = Pm.where(to: current_user.id).order(seen: :desc, created_at: :desc).page(params[:page]).per(10)
   end
 
   def check_one_pm
@@ -127,11 +125,13 @@ class UserController < ApplicationController
 
     user = User.find params[:receiver]
 
-    if user
+    if user and Pm.where(to: user.id).count < 5
       Pm.create subject: params[:subject], body: params[:body], to: user.id, from: current_user.id
+      flash[:message] = "PM Sent."
+      return redirect_to user_page_path(id: params[:receiver])
     end
-
-    flash[:message] = "PM Sent."
+      
+    flash[:message] = "User's inbox is full."
     return redirect_to user_page_path(id: params[:receiver])
   end
 

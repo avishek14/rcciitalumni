@@ -4,7 +4,7 @@
 		<%= flash[:message] if flash[:message] %>
 	</div>
 <div class = 'user-image-box'>
-	<%= image_tag @cu.image_url.to_s %>
+	<%= image_tag @cu.image.to_s, size: "300x300" %>
 	<p><%= @cu.typeof %></p>
 </div>
 <div class = 'user-details'>

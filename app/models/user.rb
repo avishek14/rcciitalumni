@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
 	has_many :topics
 	has_many :posts
 
-	mount_uploader :image, UserImageUploaderUploader
-
 	before_create { generate_token :auth_token }
 	before_save :encrypt_password
 

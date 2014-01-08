@@ -1,0 +1,7 @@
+<div class = 'one-feedback-wrapper'>
+	<h2><%= @feedback.subject %></h2>
+	<h4><%= @feedback.name %></h4>
+	<h6><%= @feedback.email %></h6>
+	<p><%= txtl @feedback.body %></p>
+	<%= link_to "Delete", admin_delete_feedback_path(id: @feedback.id), class: 'button' %>
+</div>

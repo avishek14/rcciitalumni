@@ -26,7 +26,8 @@ class SiteController < ApplicationController
       return redirect_to site_feedback_path
     end
 
-  	AdminMailer.feedback( params[:name], params[:email], params[:subject], params[:body]).deliver
+    Feedback.create name: params[:name], email: params[:email], subject: params[:subject], body: params[:body]
+    flash[:message] = "Your feedback has been submitted."
   	return redirect_to root_path
   end
 end

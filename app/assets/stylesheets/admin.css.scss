@@ -8,7 +8,7 @@
 	}
 
 	img{
-		width: 150px;
+		width: 100px;
 		border: 3px solid #207791;
 		&:hover{
 			border-color: #FFFFFF;
@@ -17,5 +17,37 @@
 
 	h3{
 
+	}
+}
+
+.check-feedback-wrapper{
+	li{
+		list-style: none;
+	}
+
+	h2{
+		background-color: #32C9C7;
+		color: #FFFFFF;
+		padding: 2px 4px 2px 4px;
+
+		&:hover{
+			background-color: #26807F;
+		}
+	}
+
+	h4{
+		margin-top: -13px;
+	}
+
+	h6{
+		margin-top: -20px;
+	}
+
+	.pm-body{
+		border-radius: 5px;
+		margin-top: -13px;
+		padding: 15px;
+		list-style: none;
+		background-color: #1A5958;
 	}
 }

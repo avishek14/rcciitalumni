@@ -8,7 +8,7 @@
 		<li>
 			<div class = 'user-info'><%= link_to user_page_path(id: p.user.id) do %>
 				<h4><%= p.user.fname %></h4>
-				<%= image_tag p.user.image.thumb.to_s, size: "100x100" %>
+				<%= image_tag p.user.image.to_s, size: "100x100" %>
 				<p><%= p.user.typeof %></p>
 			<% end %></div>
 			<div class = 'post-info'>

@@ -3,7 +3,7 @@
 	<ul>
 	<% @u_all.each do |u| %>
 		<%= link_to user_page_path id: u.id do %><li>
-			<%= image_tag u.image.thumb.to_s %>
+			<%= image_tag u.image.to_s, size: "100x100" %>
 			<h3><%= "#{u.fname} #{u.lname}" %></h3>
 		</li><% end %>
 	<% end %>

@@ -13,7 +13,7 @@
 	<div id = 'slideshowContainer'>
 		<div class = 'slideshow'>
 			<% GalleryImages.all.each do |gi| %>
-				<%= image_tag gi.gallery_image.thumb.to_s %>
+				<%= image_tag gi.gallery_image.to_s, size: "440x440" %>
 			<% end %>
 		</div>
 	</div>

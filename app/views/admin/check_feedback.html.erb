@@ -1,0 +1,11 @@
+<div class = 'check-feedback-wrapper'>
+	<ul>
+		<% @feedbacks.each do |f| %>
+			<li>
+				<h2><%= link_to f.subject, admin_one_feedback_path(id: f.id) %></h2>
+				<h4><%= f.name %></h4>
+				<h6><%= f.email %></h6>
+			</li>
+		<% end %>
+	</ul>
+</div>

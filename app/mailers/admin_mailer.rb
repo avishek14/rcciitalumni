@@ -6,19 +6,8 @@ class AdminMailer < ActionMailer::Base
   #
   #   en.admin_mailer.feedback.subject
   #
-  def feedback name, email, subject, body
-    @body = RedCloth.new(body).to_html.html_safe
-    @name = name
-    @email = email
-    mail to: "rcciit.alumni.admn@gmail.com", subject: "[Feedback] #{subject}"
-  end
 
-  def new_user typeof, name, email, phone
-    @typeof = typeof
-    @name = name
-    @email = email
-    @phone = phone
-
-    mail to: "rcciit.alumni.admn@gmail.com", subject: "[New User] #{name}"
+  def user_active user
+    mail to: user.email, subject: "Your account on RCCIITAlumni.in has been activated!"
   end
 end

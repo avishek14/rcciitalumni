@@ -4,7 +4,7 @@
 	</div>
 	<%= form_tag user_commit_edit_path, multipart: true do %>
 		<%= label_tag :image, "Image:" %><br/>
-		<%= file_field_tag :image %>
+		<%= text_field_tag :image %>
 		<br/><br/>
 		<% if current_user.typeof === 'Alumni' %>
 			<%= label_tag :status, "Current Status:" %><br/>

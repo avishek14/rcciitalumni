@@ -25,6 +25,10 @@ class AdminController < ApplicationController
     user.update_attribute :active, !user.active
 
     flash[:message] = "User state toggled. User active state is = #{user.active}"
+    if user.active
+      AdminMailer.user_active(user).deliver
+    end
+    
     return redirect_to user_page_path( id: user.id )
   end
 
@@ -106,5 +110,32 @@ class AdminController < ApplicationController
 
     Event.find(params[:id]).delete
     return redirect_to event_event_all_path
+  end
+
+  def check_feedback
+    unless is_admin?
+      return redirect_to root_path
+    end
+
+    @feedbacks = Feedback.all
+  end
+
+  def one_feedback
+    unless is_admin?
+      return redirect_to root_path
+    end
+
+    @feedback = Feedback.find(params[:id])
+  end
+
+  def delete_feedback
+    unless is_admin?
+      return redirect_to root_path
+    end
+
+    @feedback = Feedback.find(params[:id])
+    @feedback.delete
+
+    return redirect_to admin_check_feedback_path
   end
 end
