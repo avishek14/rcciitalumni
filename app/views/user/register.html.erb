@@ -25,7 +25,7 @@
 	<%= date_select :dob, :d, start_year: 1940, end_year: Time.now.year-17 %>
 	<br/><br/>
 	<%= label_tag :department, "Department:" %><span class = "mandatory-field">*</span><br/>
-	<%= text_field_tag :department %>
+	<%= select_tag :department, options_from_collection_for_select(@departments, :id, :name) %>
 	<br/><br/>
 	<%= label_tag :yearofpassing, "Year of Passing:" %><span class = "mandatory-field">*</span><br/>
 	<%= select_year Date.today, start_year: 1940 %>

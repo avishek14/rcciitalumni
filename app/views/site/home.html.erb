@@ -18,6 +18,7 @@
 		</div>
 	</div>
 
+<div class = 'scrollers'>
 	<div class = 'event-list'>
 		<ul id = 'scrollable'>
 			<% @events.each do |e| %>
@@ -28,5 +29,16 @@
 			<% end %>
 		</ul>
 	</div>
+
+	<div class = 'daily-list'>
+		<ul id = 'scrollabled'>
+			<% @daily.each do |d| %>
+				<li>
+					<span class = 'title'><%= d %></span>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
 </div>
 

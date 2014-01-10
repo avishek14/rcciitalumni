@@ -1,7 +1,7 @@
 .search-results-wrapper{
 	h2{
 		padding: 5px;
-		background-color: #32C9C7;
+		background-color: #071A20;
 		color: #FFFFFF;
 	}
 
@@ -13,6 +13,14 @@
 	}
 
 	li{
+		img{
+			border: 3px solid #207791;
+		}
+
+		.search-info-text{
+			display: inline-block;
+		}
+
 		border-left: 2px dashed #32C9C7;
 		margin-bottom: 15px;
 		padding-left: 5px;

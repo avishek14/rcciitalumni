@@ -30,6 +30,7 @@ class UserController < ApplicationController
 
   def register
     set_title 'Register'
+    @departments = Department.all
   end
 
   def create
@@ -43,7 +44,8 @@ class UserController < ApplicationController
 
     dtime = DateTime.new params[:dob]['d(1i)'].to_i, params[:dob]['d(2i)'].to_i, params[:dob]['d(3i)'].to_i
     newUser = User.new typeof: params[:typeof], fname: params[:fname], lname: params[:lname], dob: dtime, 
-      email: params[:email], phone: params[:phone], department: params[:department], password: params[:password]
+      email: params[:email], phone: params[:phone], department: Department.find(params[:department]).name,
+      department_id: params[:department], password: params[:password]
 
     newUser.image = params[:image]
 
@@ -182,8 +184,6 @@ class UserController < ApplicationController
     end
 
     cur = current_user
-    cur.remove_image!
-    cur.save
     cur.destroy
     cookies.delete :auth_token
     redirect_to root_path

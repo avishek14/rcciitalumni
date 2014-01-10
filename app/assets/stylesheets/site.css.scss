@@ -13,11 +13,25 @@
 	border: 7px solid #207791;
 }
 
+.scrollers{
+	display: inline;
+}
+
+.daily-list{
+	float: right;
+	margin-right: 30px;
+	width: 540px;
+	max-height: 205px;
+	font-size: 150%;
+	display: inline-block;
+	color: #FFFFFF;
+	margin-top: -240px;
+}
+
 .event-list{
 	float: right;
 	margin-right: 30px;
 	width: 540px;
-	height: 800px;
 	font-size: 150%;
 	display: inline-block;
 	color: #FFFFFF;
@@ -38,7 +52,7 @@
 	position: relative;
 	right: -20px;
 	overflow: hidden;
-	max-height: 205px;
+	height: 180px;
 	max-width: 780px;
 	border: 7px solid #207791;
 	background-color: #1A5958;
