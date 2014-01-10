@@ -14,10 +14,13 @@
 }
 
 .event-list{
-	width: 640px;
+	float: right;
+	margin-right: 30px;
+	width: 540px;
 	height: 800px;
 	font-size: 150%;
 	display: inline-block;
+	color: #FFFFFF;
 
 	.date{
 		float: right;
@@ -35,7 +38,7 @@
 	position: relative;
 	right: -20px;
 	overflow: hidden;
-	max-height: 800px;
+	max-height: 205px;
 	max-width: 780px;
 	border: 7px solid #207791;
 	background-color: #1A5958;
@@ -69,4 +72,8 @@ Class name automatically added to element */
 	text-align: justify;
 	display: inline-block;
 	max-width: 720px;
+}
+
+.title{
+	max-width: 200px;
 }

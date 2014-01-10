@@ -26,7 +26,7 @@
 	}
 
 	h2{
-		background-color: #32C9C7;
+		background-color: #083A52;
 		color: #FFFFFF;
 		padding: 2px 4px 2px 4px;
 
@@ -50,4 +50,15 @@
 		list-style: none;
 		background-color: #1A5958;
 	}
+}
+
+.one-feedback-wrapper{
+	h2, h4, h6{
+		border-radius: 5px;
+		padding: 5px;
+		background-color: #1A5958;
+		color: #FFFFFF;
+	}
+
+
 }

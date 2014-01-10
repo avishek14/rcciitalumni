@@ -36,6 +36,8 @@ $userFS: 117%;
 }
 
 .prop{
+	border-radius: 3px;
+	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 95%;
 	background-color: #115A70;
@@ -70,6 +72,8 @@ $userFS: 117%;
 		border: 13px solid #207791;
 	}
 	p{
+		color: #FFFFFF;
+		border-radius: 3px;
 		text-align: center;
 		background-color: #115A70;
 	}
@@ -82,7 +86,7 @@ $userFS: 117%;
 
 .check-pm-wrapper{
 	h2{
-		background-color: #32C9C7;
+		background-color: #071A20;
 		color: #FFFFFF;
 		padding: 2px 4px 2px 4px;
 	}
@@ -94,6 +98,14 @@ $userFS: 117%;
 	}
 
 	li{
+		img{
+			border: 3px solid #207791;
+
+			&:hover{
+				border-color: #FFFFFF;
+			}
+		}
+
 		padding-left: 5px;
 		margin-bottom: 10px;
 		border-left: 2px dashed #32C9C7;
@@ -103,12 +115,12 @@ $userFS: 117%;
 .new-pm-indicator{
 	font-size: 70%;	
 	font-weight: bold;
-	color: #14242B	;
+	color: #FFFFFF	;
 }
 
 .one-pm-wrapper{
 	h2{
-		background-color: #32C9C7;
+		background-color: #071A20;
 		color: #FFFFFF;
 		padding: 2px 4px 2px 4px;
 	}
@@ -122,6 +134,7 @@ $userFS: 117%;
 	}
 
 	.pm-body{
+		color: #FFFFFF;
 		border-radius: 5px;
 		margin-top: -13px;
 		padding: 15px;

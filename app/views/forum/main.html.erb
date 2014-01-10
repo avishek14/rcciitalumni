@@ -9,9 +9,12 @@
 				<li>
 					<h4><%= t.title %></h4><% end %>
 					<span class = 'owner'>
-						<%= link_to "started by #{t.user.fname} #{t.user.lname}", user_page_path(id: t.user.id) %><br/>
-						<%= "created on "+t.created_at.strftime("%d/%m/%Y  %I:%M %p") %><br/>
-						<%= "total posts "+Post.where(topic_id: t.id).count.to_s %>
+						<%= image_tag t.user.image.to_s, size: "40x40" %>
+						<div class = 'info-text'>
+							<%= link_to "started by #{t.user.fname} #{t.user.lname}", user_page_path(id: t.user.id) %><br/>
+							<%= "created on "+t.created_at.strftime("%d/%m/%Y  %I:%M %p") %><br/>
+							<%= "total posts "+Post.where(topic_id: t.id).count.to_s %>
+						</div>
 					</span>
 				</li>
 		<% end %>

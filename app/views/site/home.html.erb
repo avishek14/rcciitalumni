@@ -13,7 +13,7 @@
 	<div id = 'slideshowContainer'>
 		<div class = 'slideshow'>
 			<% GalleryImages.all.each do |gi| %>
-				<%= image_tag gi.gallery_image.to_s, size: "440x440" %>
+				<%= image_tag gi.gallery_image.to_s, size: "540x440" %>
 			<% end %>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 		<ul id = 'scrollable'>
 			<% @events.each do |e| %>
 				<%= link_to event_event_one_path id: e.id do %><li>
-					<span><%= e.title %></span>
+					<span class = 'title'><%= e.title %></span>
 					<span class = 'date'><%= e.date_on.strftime "...%d/%m/%Y" %></span>
 				<% end %></li>
 			<% end %>

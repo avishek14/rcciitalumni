@@ -6,7 +6,8 @@
 		<%= paginate @pms %>
 		<%= "No Messages." if @pms.empty? %>
 		<% @pms.each do |pm| %>
-			<li><span class= "pm-subject"><%= link_to pm.subject, user_check_one_pm_path(id: pm.id) %></span>
+			<li><%= image_tag User.find(pm.from).image.to_s, size: "40x40" %>
+				<span class= "pm-subject"><%= link_to pm.subject, user_check_one_pm_path(id: pm.id) %></span>
 				<span class = 'new-pm-indicator'><%= 'New' unless pm.seen %></span><br/>
 				<%= link_to "#{User.find(pm.from).fname} #{User.find(pm.from).lname}", user_page_path(id: pm.from) %>&nbsp;&nbsp;
 				<em><%= pm.created_at.strftime "%d/%m/%Y  %I:%M %p" %></em>

@@ -9,15 +9,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: rcciita_t
+  database: .
   pool: 5
-  username: kaylors
-  password: dragonx
+  username: .
+  password: .
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: rcciita_p
+  database: .
   pool: 5
-  username: kaylors
-  password: dragonx
+  username: .
+  password: .

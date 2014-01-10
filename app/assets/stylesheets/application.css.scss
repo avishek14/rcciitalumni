@@ -13,10 +13,10 @@
  */
 
 body{
-	background-color: #022B3B;
+	background-color: #FFFFFF;
 	/*background-image: url('ricepaper.png');*/
 	font-family: 'Cardo', serif;
-	color: #FFFFFF;
+	color: #0A171C;
 }
 
 .yield-wrapper{
@@ -50,12 +50,12 @@ a{
 .button{
 	padding: 3px 7px 1px 7px;
 	font-family: 'Expletus Sans', cursive;
-	background-color: #207791;
+	background-color: #071A20;
 	color: lighten(#C7B981, 20%);
 	border-radius: 5px;
 
 	&:hover{
-		background-color: darken(#207791, 30%);
+		background-color: lighten(#207791, 30%);
 		color: lighten(#C7B981, 30%);
 	}
 }
@@ -64,7 +64,7 @@ header{
 	border-radius: 5px;
 	width: 1100px;
 	text-align: center;
-	background-color: #115A70;
+	background-color: lighten(#115A70, 30%);
 	padding: 10px;
 	padding-top: 20px;
 	margin: auto;
@@ -86,8 +86,8 @@ header{
 		list-style: none;
 		text-align: center;
 		padding: 10px;
-		border-left: 1px solid #FFFFFF;
-		border-right: 1px solid #FFFFFF;
+		border-left: 1px solid #0A171C;
+		border-right: 1px solid #0A171C;
 		font-family: 'Exo 2', sans-serif;
 		a:hover{
 			font-weight: bold;
@@ -102,6 +102,7 @@ nav{
 	text-align: center;
 	width: 900px;
 	height: 21px;
+	color: #FFFFFF;
 	li{
 		border-radius: 5px;
 		width: 150px;
@@ -120,6 +121,7 @@ nav{
 .admin-bar{
 	margin: auto;
 	text-align: center;
+	color: #FFFFFF;
 	li{
 		border-radius: 5px;
 		width: 150px;
