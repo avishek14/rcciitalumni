@@ -4,13 +4,13 @@ class SiteController < ApplicationController
 
     @daily = []
     User.all.each do |u|
-      if u.dob.day === Date.today.day and u.dob.month === u.dob.month
+      if u.dob.day === 1.second.from_now.day and u.dob.month === u.dob.month
         @daily.append "Today is #{u.fname} #{u.lname}'s birthday!"
       end
     end
 
     Daily.all.each do |d|
-      if d.date.month === Date.today.month and d.date.day === Date.today.day
+      if d.date.month === Date.today.month and d.date.day === 1.second.from_now.day
         @daily.append "Today is #{d.title}!"
       end
     end
