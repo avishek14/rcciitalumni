@@ -1,6 +1,6 @@
 <div class = 'search-wrapper'>
 	<%= form_tag search_search_results_path do %>
-		<%= label_tag :search_terms, "Enter first name, last name, email or phone number:" %><br/>
+		<%= label_tag :search_terms, "Enter first name, last name, email or phone number, year of passing, stream:" %><br/>
 		<%= text_field_tag :search_terms %> 
 		<%= select_tag :department, options_from_collection_for_select(@departments, :id, :name), include_blank: true %>
 		<%= select_year Date.today, start_year: 1940, include_blank: true %>

@@ -24,8 +24,11 @@ class SiteController < ApplicationController
   end
 
   def pdesk
-
     set_title "Principal's Desk"
+  end
+
+  def cdesk
+    set_title "Chairman's Desk"
   end
 
   def feedback

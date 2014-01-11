@@ -49,6 +49,7 @@ RCCIITAlumni::Application.routes.draw do
   root "site#home"
   get "site/contact"
   get "site/pdesk"
+  get "site/cdesk"
   get "site/feedback"
   post "site/send_feedback"
   # The priority is based upon order of creation: first created -> highest priority.
