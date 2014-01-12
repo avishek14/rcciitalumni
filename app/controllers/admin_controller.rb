@@ -4,7 +4,7 @@ class AdminController < ApplicationController
       return redirect_to root_path
     end
 
-    @u_all = User.all.order('fname').page(params[:page]).per(18)
+    @u_all = User.all.order('active').order('fname').page(params[:page]).per(18)
 
     set_title 'Admin | Users'
   end
