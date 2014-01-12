@@ -35,7 +35,7 @@
 			<% @dailybs.each do |d| %>
 				<li>
 					<%= link_to user_page_path(id: d.id) do %>
-						<span class = 'title'>Today is <%= "#{d.fname} #{d.lname}'s" %> birdthay!</span>
+						<span class = 'title'>Today is <%= "#{d.fname} #{d.lname}'s" %> birthday!</span>
 					<% end %>
 				</li>
 			<% end %>
