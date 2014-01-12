@@ -32,6 +32,13 @@
 
 	<div class = 'daily-list'>
 		<ul id = 'scrollabled'>
+			<% @dailybs.each do |d| %>
+				<li>
+					<%= link_to user_page_path(id: d.id) do %>
+						<span class = 'title'>Today is <%= "#{d.fname} #{d.lname}'s" %> birdthay!</span>
+					<% end %>
+				</li>
+			<% end %>
 			<% @daily.each do |d| %>
 				<li>
 					<span class = 'title'><%= d %></span>

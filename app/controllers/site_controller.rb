@@ -2,10 +2,11 @@ class SiteController < ApplicationController
   def home
   	@events = Event.all
 
-    @daily = []
+    @dailybs = []
+    @daily =[]
     User.all.each do |u|
       if u.dob.day === 1.second.from_now.day and u.dob.month === u.dob.month
-        @daily.append "Today is #{u.fname} #{u.lname}'s birthday!"
+        @dailybs.append u
       end
     end
 
