@@ -22,7 +22,7 @@ $(function(){
             auto: true,
             autoMode: 'loop',
 			frameRate: 20,
-			speed: 1	
+			speed: 3	
 	});
 
 });
