@@ -1,5 +1,11 @@
-<%= params %>
-
-<br/>
-
-<%= params[:image] %>
+<div class = 'create-account-message'>
+	<% if @newUser.typeof.eql? "Alumni" or @newUser.typeof.eql? "Teacher" %>
+		<h2>Congratulations <%= "#{@newUser.fname} #{@newUser.lname}" %> on being registered with RCCIITAlumni</h2>
+		<p>You have been registered with the email: <%= @newUser.email %>.</p>
+		<p>Please contact the admmin for details of activation.</p>
+	<% else %>
+		<h2>Congratulations <%= "#{@newUser.fname} #{@newUser.lname}" %> on being registered with RCCIITAlumni</h2>
+		<p>You have been registered with the email: <%= @newUser.email %>.</p>
+		<p>Please wait 24 hours for activation by the admin.</p>
+	<% end %>
+</div>

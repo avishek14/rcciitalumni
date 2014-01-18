@@ -23,6 +23,7 @@
 	<% if @cu.typeof === "Alumni" %>
 		<% if @cu.status != "" %><p><span class = 'prop'>Current Status</span> <br/><%= @cu.status %></p><% end %>
 		<% if @cu.inst != "" %><p><span class = 'prop'>Institution or Organization</span> <br/><%= @cu.inst %></p><% end %>
+		<% if @cu.posit != "" %><p><span class = 'prop'>Post</span> <br/><%= @cu.posit if @cu.posit %></p><% end %>	
 	<% end %>
 	<% if @cu.typeof === "Teacher" %>
 		<p><span class = 'prop'>Post</span> <br/><%= @cu.posit if @cu.posit %></p>

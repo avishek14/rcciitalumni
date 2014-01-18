@@ -97,15 +97,17 @@ header{
 }
 
 nav{
+	font-size: 70%;
 	margin: auto;
+	margin-left: -95px;
 	margin-bottom: 10px;
 	text-align: center;
-	width: 1100px;
+	width: 1250px;
 	height: 21px;
 	color: #FFFFFF;
 	li{
 		border-radius: 5px;
-		width: 150px;
+		width: 110px;
 		padding: 5px;
 		display: inline-block;
 		list-style: none;
@@ -122,9 +124,10 @@ nav{
 	margin: auto;
 	text-align: center;
 	color: #FFFFFF;
+	font-size: 70%;
 	li{
 		border-radius: 5px;
-		width: 150px;
+		width: 110px;
 		padding: 5px;
 		display: inline-block;
 		list-style: none;

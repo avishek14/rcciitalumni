@@ -27,6 +27,8 @@ class AdminController < ApplicationController
     flash[:message] = "User state toggled. User active state is = #{user.active}"
     if user.active
       AdminMailer.user_active(user).deliver
+    else
+      AdminMailer.user_deactive(user).deliver
     end
     
     return redirect_to user_page_path( id: user.id )

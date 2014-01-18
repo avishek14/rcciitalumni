@@ -43,38 +43,35 @@ class UserController < ApplicationController
     end
 
     dtime = DateTime.new params[:dob]['d(1i)'].to_i, params[:dob]['d(2i)'].to_i, params[:dob]['d(3i)'].to_i
-    newUser = User.new typeof: params[:typeof], fname: params[:fname], lname: params[:lname], dob: dtime, 
+    @newUser = User.new typeof: params[:typeof], fname: params[:fname], lname: params[:lname], dob: dtime, 
       email: params[:email], phone: params[:phone], department: Department.find(params[:department]).name,
       department_id: params[:department], password: params[:password]
 
-    newUser.image = params[:image]
+    @newUser.image = params[:image]
 
     if params[:typeof] === 'Alumni'
-      newUser.status = params[:status] if params[:status]
-      newUser.inst = params[:inst] if params[:inst]
-      newUser.yearofpassing = params[:date][:year]
+      @newUser.status = params[:status] if params[:status]
+      @newUser.inst = params[:inst] if params[:inst]
+      @newUser.yearofpassing = params[:date][:year]
+      @newUser.posit = params[:posit] if params[:posit]
     elsif params[:typeof] === 'Teacher'
-      newUser.posit = params[:posit]
+      @newUser.posit = params[:posit]
     elsif params[:typeof] === 'Student'
-      newUser.yearofpassing = params[:date][:year]
+      @newUser.yearofpassing = params[:date][:year]
     end
 
     if params[:email] === 'admin@rcciita.com'
-      newUser.active = true
+      @newUser.active = true
     else
-      newUser.active = false
+      @newUser.active = false
     end
 
-    unless newUser.valid?
+    unless @newUser.valid?
       flash[:error] = "Something has gone wrong. Check the format of your image."
       return redirect_to user_register_path
     end
     
-    newUser.save
-
-    flash[:message] = "Account registered. Wait for activation by admin."
-
-    redirect_to root_path  
+    @newUser.save
   end
 
   def page

@@ -37,13 +37,13 @@
 	<%= text_field_tag :inst %>
 	<br/><br/>
 	<%= label_tag :posit, "Position:" %><span class = "mandatory-field">*</span><br/>
-	<%= text_field_tag :posit, nil, disabled: :disabled %>
+	<%= text_field_tag :posit, nil %>
 	<br/><br/>
 	<%= label_tag :email, "Email:" %><span class = "mandatory-field">*</span><br/>
 	<%= email_field_tag :email %>
 	<br/><br/>
 	<%= label_tag :phone, "Phone No.:" %><span class = "mandatory-field">*</span><br/>
-	<%= text_field_tag :phone %> <span class = 'form-field-info'>Ten digit phone number, no spaces or hyphen.</span>
+	<%= text_field_tag :phone %> <span class = 'form-field-info'>13 digit phone number, no spaces or hyphen, include country code as "091" or similar.</span>
 	<br/><br/>
 	<%= label_tag :password, "Password:" %><span class = "mandatory-field">*</span><br/>
 	<%= password_field_tag :password %> <span class = 'form-field-info'>Minimum 6 characters, maximum 16, letters and numbers only.</span>

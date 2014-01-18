@@ -3,7 +3,7 @@ $(function(){
 
 	typeOf.change(function(){
 		if( typeOf.val() === 'Alumni') {
-			$('#posit').prop('disabled', true);
+			$('#posit').prop('disabled', false);
 			$('#inst').prop('disabled', false);
 			$('#status').prop('disabled', false);
 			$('#date_year').prop('disabled', false);
@@ -41,7 +41,7 @@ $(function(){
 			messg = "Phone number cannot be empty.";
 			err =true;
 		}
-		else if( !$('#phone').val().match(/^(\d){10}$/) ) {
+		else if( !$('#phone').val().match(/^(\d){13}$/) ) {
 			messg = "Phone number invalid."
 			err = true;
 		}

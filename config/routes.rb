@@ -52,6 +52,8 @@ RCCIITAlumni::Application.routes.draw do
   get "site/cdesk"
   get "site/feedback"
   post "site/send_feedback"
+  get "site/ack"
+  get "site/alumniassoc"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
