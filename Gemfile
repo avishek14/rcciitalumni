@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3' #Replaces the sqlite3 gem
+gem 'sqlite3'
+#gem 'pg' #Replaces the sqlite3 gem
 gem 'unicorn' #For the Unicorn server
 gem 'unicorn-rails' #Unicorn was causing some trouble for me and including this solved my problems
 gem 'bcrypt-ruby', :require => "bcrypt" #For generating safe passwords
