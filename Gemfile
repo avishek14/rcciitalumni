@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-gem 'pg' #Replaces the sqlite3 gem
+gem 'sqlite3'
+#gem 'pg' #Replaces the sqlite3 gem
 gem 'unicorn' #For the Unicorn server
 gem 'unicorn-rails' #Unicorn was causing some trouble for me and including this solved my problems
 gem 'bcrypt-ruby', :require => "bcrypt" #For generating safe passwords
@@ -25,7 +25,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-#gem 'passenger'
+gem 'passenger'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
