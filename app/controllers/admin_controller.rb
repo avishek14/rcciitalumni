@@ -40,7 +40,6 @@ class AdminController < ApplicationController
     end
 
     user = User.find params[:id]
-    user.remove_image!
     user.destroy
 
     return redirect_to admin_user_all_path
@@ -74,8 +73,6 @@ class AdminController < ApplicationController
     end
 
     gali = GalleryImages.find(params[:id])
-    gali.remove_gallery_image!
-    gali.save
     gali.delete
     return redirect_to gallery_gallery_path
   end
