@@ -8,9 +8,7 @@ gem 'pg' #Replaces the sqlite3 gem
 gem 'unicorn' #For the Unicorn server
 gem 'unicorn-rails' #Unicorn was causing some trouble for me and including this solved my problems
 gem 'bcrypt-ruby', :require => "bcrypt" #For generating safe passwords
-gem 'carrierwave'
 gem 'kaminari'
-gem 'rmagick', '2.13.2'
 
 gem 'textile_editor_helper'
 gem 'RedCloth'
