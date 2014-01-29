@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140110130503) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "dailies", force: true do |t|
     t.string   "title"
     t.datetime "date"
