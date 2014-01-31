@@ -124,7 +124,7 @@ class UserController < ApplicationController
 
     user = User.find params[:receiver]
 
-    if user and Pm.where(to: user.id).count < 5
+    if user and Pm.where(to: user.id).count < 19
       Pm.create subject: params[:subject], body: params[:body], to: user.id, from: current_user.id
       flash[:message] = "PM Sent."
       return redirect_to user_page_path(id: params[:receiver])
