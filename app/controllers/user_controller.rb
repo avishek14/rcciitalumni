@@ -60,7 +60,7 @@ class UserController < ApplicationController
       @newUser.yearofpassing = params[:date][:year]
     end
 
-    if params[:email] === 'admin@rcciita.com'
+    if params[:email] === 'admin@rcciitalumni.in' or params[:email] === 'avishekga@gmail.com'
       @newUser.active = true
     else
       @newUser.active = false

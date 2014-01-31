@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin?
-  	if current_user && current_user.email === "admin@rcciita.com"
+  	if current_user && (current_user.email === "avishekga@gmail.com" || current_user.email === "admin@rcciitalumni.in")
   		return true
   	else
   		return false
