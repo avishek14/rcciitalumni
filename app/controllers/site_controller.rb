@@ -5,8 +5,8 @@ class SiteController < ApplicationController
     @dailybs = []
     @daily =[]
     User.all.each do |u|
-      if u.dob.day === 1.second.from_now.day and 1.second.from_now.month === u.dob.month
-        @dailybs.append u
+      if u.dob.day === 1.second.from_now.day and 1.second.from_now.month === u.dob.month and u.active
+        @dailybs.append u 
       end
     end
 

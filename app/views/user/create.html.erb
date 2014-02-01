@@ -1,8 +1,11 @@
 <div class = 'create-account-message'>
 	<% if @newUser.typeof.eql? "Alumni" or @newUser.typeof.eql? "Teacher" %>
-		<h2>Congratulations <%= "#{@newUser.fname} #{@newUser.lname}" %> on being registered with RCCIITAlumni</h2>
+		<h2>Congratulations <%= "#{@newUser.fname} #{@newUser.lname}" %> on being registered with RCCIIT Alumni !!</h2>
 		<p>You have been registered with the email: <%= @newUser.email %>.</p>
-		<p>Please contact the admmin for details of activation.</p>
+		<p>For completing the registration process please pay the required amount in the given account details:</p>
+		<p>Registration Fee : 100 INR (One time)</p>
+		<p>Membership Fee : 100 INR (Yearly)</p>
+		<p>After payment is done please contact the admin for details of activation.</p>
 	<% else %>
 		<h2>Congratulations <%= "#{@newUser.fname} #{@newUser.lname}" %> on being registered with RCCIITAlumni</h2>
 		<p>You have been registered with the email: <%= @newUser.email %>.</p>

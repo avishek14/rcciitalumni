@@ -8,10 +8,10 @@ class AdminMailer < ActionMailer::Base
   #
 
   def user_active user
-    mail to: user.email, subject: "Your account on RCCIITAlumni.in has been activated!"
+    mail to: user.email, subject: "Your account on www.rcciitalumni.in has been activated!"
   end
 
   def user_deactive user
-    mail to: user.email, subject: "Your account on RCCIITAlumni.in has been deactivated!"
+    mail to: user.email, subject: "Your account on www.rcciitalumni.in has been deactivated!"
   end
 end
